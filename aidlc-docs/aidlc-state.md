@@ -112,6 +112,7 @@
 ## Code Generation Planning Status
 - Unit name: `cuelint`
 - Plan file: `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
-- Status: Created; awaiting explicit user approval before code generation.
+- Status: Created; pre-generation gate accepted as sufficient; awaiting explicit Code Generation Plan approval before code generation.
 - Application code target: workspace root, using `src/`, `tests/`, and supporting root-level project files.
 - Planning risk items included: offset preservation, duplicate match policy, sentence segmentation limitations.
+- Gate note: User confirmed on 2026-05-08 that the current stop state is correct AI-DLC behavior and that no additional pre-Code-Generation corrections are required.

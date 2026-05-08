@@ -10,6 +10,21 @@
 **Context**: Coach grading request for completed Inception deliverables with explicit web search requirement.
 
 ---
+## Bootcamp Artifact Regrading After README State Alignment
+**Timestamp**: 2026-05-08T09:00:57Z
+**User Input**: "採点を受けてチームは成果物を更新した。
+当該リポジトリを総合的に確認し、採点せよ。"
+**AI Response**: "Began comprehensive regrading after the team aligned README state with the Construction Code Generation Planning status, focusing on repository-wide consistency, approval gate integrity, and readiness for Code Generation Plan review."
+**Context**: Updated artifact review and bootcamp-style regrading request after README/state alignment.
+
+---
+## Pre-Code-Generation Gate Acceptance
+**Timestamp**: 2026-05-08T09:02:59Z
+**User Input**: "採点結果として、十分です。Code Generation Plan はまだ承認前です。これは不備ではなく、AI-DLC として正しい停止状態です。よって、再度修正すべきものがなければ、これで Code Generation 直前のゲートまで承認されたものとして、コミットしてください。"
+**AI Response**: "Recorded that the repository is accepted through the pre-Code-Generation gate, while preserving the explicit approval requirement for the Code Generation Plan before any application code is generated."
+**Context**: Gate acceptance; no application code generated.
+
+---
 ## Bootcamp Artifact Regrading After Code Generation Plan
 **Timestamp**: 2026-05-08T08:58:00Z
 **User Input**: "採点を受けてチームは成果物を更新した。
