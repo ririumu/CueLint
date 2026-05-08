@@ -8,7 +8,7 @@ Inception is approved to proceed to Construction.
 
 - **Score**: 92 / 100
 - **Decision**: Pass; proceed to Construction
-- **Next required gate**: Code Generation Planning approval before any application code is generated
+- **Next required gate**: Code Generation Plan approval before any application code is generated
 
 ## Strengths
 
@@ -29,3 +29,7 @@ The Code Generation plan must explicitly address these quality-sensitive impleme
 
 Do not generate application code until the Code Generation plan is created and explicitly approved.
 
+## Code Generation Plan
+
+- **Plan file**: `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
+- **Status**: Created and awaiting explicit approval.

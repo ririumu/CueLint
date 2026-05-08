@@ -44,9 +44,9 @@ Build CueLint, a minimal Python command-line tool for post-hoc auditing of Engli
 | Workspace Detection | Completed | Greenfield workspace detected. |
 | Reverse Engineering | Skipped | No existing application code was present. |
 | Requirements Analysis | Completed | Minimal requirements were approved. |
-| User Stories | Completed retrospectively | New user-facing CLI behavior benefits from explicit personas, stories, and acceptance criteria. |
+| User Stories | Completed and review-accepted | New user-facing CLI behavior benefits from explicit personas, stories, and acceptance criteria. |
 | Workflow Planning | Completed | Minimal execution plan was approved. |
-| Application Design | Completed retrospectively | Component responsibilities, methods, service orchestration, dependencies, and output contract are now documented before Code Generation. |
+| Application Design | Completed and review-accepted | Component responsibilities, methods, service orchestration, dependencies, and output contract are now documented before Code Generation. |
 | Units Generation | Skipped | A single implementation unit is sufficient. |
 | Functional Design | Skipped | Deterministic matching logic can be specified in the Code Generation plan. |
 | NFR Requirements | Skipped | NFRs are already captured in requirements. |
@@ -62,6 +62,7 @@ Code Generation begins with a planning step. The implementation plan must be rev
 - Final review score: 92 / 100.
 - Status: Approved to proceed to Construction.
 - Code Generation Planning should explicitly cover offset preservation, duplicate match policy, and sentence segmentation limitations because normalization, regular expression matching, and offsets are core quality risks for CueLint.
+- Code Generation Plan created at `aidlc-docs/construction/plans/cuelint-code-generation-plan.md` and is awaiting explicit approval.
 
 ## Key References
 
@@ -75,3 +76,4 @@ Code Generation begins with a planning step. The implementation plan must be rev
 - Component methods: `aidlc-docs/inception/application-design/component-methods.md`
 - Services: `aidlc-docs/inception/application-design/services.md`
 - Component dependencies: `aidlc-docs/inception/application-design/component-dependency.md`
+- Code generation plan: `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`

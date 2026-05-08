@@ -115,9 +115,10 @@ The planning artifacts live under `aidlc-docs/`:
 - `aidlc-docs/inception/plans/application-design-plan.md`
 - `aidlc-docs/inception/plans/execution-plan.md`
 - `aidlc-docs/construction-readiness.md`
+- `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
 - `aidlc-docs/aidlc-state.md`
 - `aidlc-docs/audit.md`
 
 ## Next Step
 
-Start AI-DLC Code Generation planning. The implementation plan must be reviewed and explicitly approved before application code is generated.
+Review and explicitly approve the Code Generation Plan at `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`. Application code must not be generated before that approval.
