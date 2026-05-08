@@ -32,9 +32,9 @@ flowchart TD
         WD["Workspace Detection<br/><b>COMPLETED</b>"]
         RE["Reverse Engineering<br/><b>SKIP</b>"]
         RA["Requirements Analysis<br/><b>COMPLETED</b>"]
-        US["User Stories<br/><b>SKIP</b>"]
+        US["User Stories<br/><b>COMPLETED</b>"]
         WP["Workflow Planning<br/><b>COMPLETED</b>"]
-        AD["Application Design<br/><b>SKIP</b>"]
+        AD["Application Design<br/><b>COMPLETED</b>"]
         UG["Units Generation<br/><b>SKIP</b>"]
     end
 
@@ -69,12 +69,12 @@ flowchart TD
 
     style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RA fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
-    style WP fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style WP fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style CG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style BT fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style RE fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
-    style US fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
-    style AD fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style US fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style AD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style UG fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style FD fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style NFRA fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
@@ -96,9 +96,9 @@ INCEPTION
 - Workspace Detection: COMPLETED
 - Reverse Engineering: SKIP
 - Requirements Analysis: COMPLETED
-- User Stories: SKIP
+- User Stories: COMPLETED
 - Workflow Planning: COMPLETED
-- Application Design: SKIP
+- Application Design: COMPLETED
 - Units Generation: SKIP
 
 CONSTRUCTION
@@ -121,12 +121,12 @@ OPERATIONS
 - [x] Reverse Engineering - SKIPPED
   - **Rationale**: Greenfield workspace with no existing application code.
 - [x] Requirements Analysis - COMPLETED
-- [x] User Stories - SKIPPED
-  - **Rationale**: First version is a local technical tool with one primary usage mode and minimal scope.
+- [x] User Stories - COMPLETED RETROSPECTIVELY
+  - **Rationale**: New user-facing CLI behavior benefits from explicit personas, stories, and acceptance criteria.
 - [x] Workflow Planning - COMPLETED
   - **Rationale**: Execution plan approved by user.
-- [x] Application Design - SKIPPED
-  - **Rationale**: Component boundaries are small enough to define in the code generation plan.
+- [x] Application Design - COMPLETED RETROSPECTIVELY
+  - **Rationale**: Component responsibilities, service orchestration, dependencies, and output contract are useful before Code Generation.
 - [x] Units Generation - SKIPPED
   - **Rationale**: A single implementation unit is sufficient.
 
@@ -158,7 +158,7 @@ Not applicable. This is a greenfield single-package implementation.
 
 - **Total Stages Remaining After Approval**: 2
 - **Stages to Execute**: Code Generation, Build and Test
-- **Stages to Skip**: User Stories, Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Infrastructure Design
+- **Stages to Skip**: Units Generation, Functional Design, NFR Requirements, NFR Design, Infrastructure Design
 - **Estimated Duration**: Short, suitable for a compact prototype iteration.
 
 ## Success Criteria
