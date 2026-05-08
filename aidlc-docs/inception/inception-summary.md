@@ -13,12 +13,14 @@ Build CueLint, a minimal Python command-line tool for post-hoc auditing of Engli
 - Local CLI.
 - Product name: CueLint.
 - Primary persona: Researcher using AI.
-- Lint-style usage, including compatibility with a future `make lint` target.
+- Lint-style usage, including a required `make lint` target.
 - English-only input.
 - Deterministic normalization and cue matching.
 - Evidence table output.
+- JSON as the default output format, with optional Markdown output allowed.
 - Summary metrics.
-- Deterministic threshold flags derived from transparent counts or densities.
+- Deterministic threshold flags for high cue density and first-paragraph cue concentration.
+- One assistant response per invocation from stdin or a text file.
 - Focused tests.
 
 ## Deferred Scope
@@ -31,6 +33,9 @@ Build CueLint, a minimal Python command-line tool for post-hoc auditing of Engli
 - LLM-as-judge evaluation.
 - Hallucination, factuality, legal, medical, or safety correctness detection.
 - Deployment and infrastructure.
+- Multi-file project scans.
+- Prompt-response pairing or conversation-history parsing.
+- CSV or JSONL output.
 
 ## Stage Decisions
 

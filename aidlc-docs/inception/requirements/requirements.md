@@ -20,11 +20,13 @@ The primary user is a researcher using AI who wants a lint-style way to inspect 
 
 ### FR1: Input Handling
 
-The tool must accept an assistant response as input from a text file or standard input.
+The tool must accept one assistant response per invocation from either a text file or standard input.
+
+For the first version, multi-file project scans, conversation-history parsing, prompt-response pairing, and dataset batch processing are out of scope.
 
 ### FR1.1: Lint Workflow Compatibility
 
-The tool should be usable from lint-style workflows, including a future `make lint` target, without requiring network access or an LLM judge.
+The repository must include a `Makefile` with a `lint` target. The `make lint` workflow should run CueLint against a small local sample or documented fixture without requiring network access or an LLM judge.
 
 ### FR2: Deterministic Normalization
 
@@ -42,7 +44,9 @@ The tool must detect English cue patterns for at least these families:
 
 ### FR4: Evidence Table Output
 
-The tool must emit a structured evidence table containing matched span text, cue family, start/end position, sentence index, paragraph index, and a short pattern identifier.
+The tool must emit a structured evidence table containing matched span text, cue family, start/end character offsets, sentence index, paragraph index, and a short pattern identifier.
+
+The default machine-readable output format must be JSON. A human-readable Markdown table may be added as an optional `--format markdown` output, but CSV and JSONL are out of scope for the first version.
 
 ### FR5: Summary Metrics
 
@@ -50,7 +54,7 @@ The tool must compute simple summary metrics, including cue counts by family, to
 
 ### FR6: Deterministic Threshold Flags
 
-The first version must include deterministic threshold flags only when they are computed from transparent counts or densities. It must not require or include a trained ML classifier.
+The first version must include a small fixed set of deterministic threshold flags derived only from transparent counts or densities. At minimum, include a high cue-density flag and a first-paragraph cue concentration flag. It must not require or include a trained ML classifier.
 
 ## Non-Functional Requirements
 
@@ -90,9 +94,12 @@ The first version must remain English-only, CLI-first, and deterministic. API se
 - Web dashboard or review workflow.
 - Multilingual cue implementation.
 - Browser extension or enterprise gateway integration.
+- Multi-file project scans.
+- Prompt-response pairing or conversation-history parsing.
+- CSV or JSONL output.
 
 ## Open Assumptions
 
 - The first useful artifact is a local CLI rather than a packaged SDK.
-- The input is plain assistant response text.
+- The input is plain assistant response text, one response per invocation.
 - Human reviewers will use evidence output as inspection material, not as a final verdict.

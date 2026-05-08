@@ -11,7 +11,7 @@
 - **NFR impact**: Low. The key qualities are interpretability, maintainability, portability, and low-latency local execution.
 - **Product name**: CueLint.
 - **Primary persona**: Researcher using AI.
-- **Representative use case**: Lint-style local review, including future `make lint` compatibility.
+- **Representative use case**: Lint-style local review through a required `make lint` workflow.
 
 ### Risk Assessment
 
@@ -166,9 +166,11 @@ Not applicable. This is a greenfield single-package implementation.
 - **Primary Goal**: CueLint can audit English assistant response text from a Python CLI and emit interpretable cue evidence.
 - **Key Deliverables**:
   - Python project structure.
+  - Makefile with `lint` target.
   - Deterministic cue detection kernel.
-  - CLI accepting stdin or file input.
-  - Evidence table output and summary metrics.
+  - CLI accepting one assistant response per invocation from stdin or file input.
+  - JSON evidence table output and summary metrics.
+  - Deterministic flags for high cue density and first-paragraph cue concentration.
   - Focused tests for cue detection and output behavior.
 - **Quality Gates**:
   - Requirements approved.

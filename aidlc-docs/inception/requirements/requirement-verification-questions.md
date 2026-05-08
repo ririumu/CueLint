@@ -37,7 +37,7 @@ C) Researchers evaluating discourse cues and failure categories
 D) Individual users auditing assistant responses locally
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: D
+[Answer]: X - Researcher using AI who wants local lint-style inspection of saved or piped assistant responses.
 
 ## Question 4
 What level of requirements detail should AI-DLC use for this project?

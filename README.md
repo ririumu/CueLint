@@ -2,7 +2,7 @@
 
 A planned CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
 
-CueLint will audit saved or piped assistant responses with deterministic cue detection. The first version is intentionally small: English-only, local-first, Python-based, and designed to fit workflows like `make lint`.
+CueLint will audit saved or piped assistant responses with deterministic cue detection. The first version is intentionally small: English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
 > Current status: AI-DLC Inception is complete. Application code has not been generated yet.
 
@@ -42,7 +42,7 @@ CueLint should fit naturally into lint-style workflows. A representative target 
 make lint
 ```
 
-In the first version, this means running deterministic checks against saved or piped assistant responses and returning evidence that a researcher can inspect. Future versions may expose richer project-level linting, but the first version should stay focused on local CLI behavior.
+In the first version, this means running deterministic checks against one saved or piped assistant response per invocation and returning evidence that a researcher can inspect. Future versions may expose richer project-level linting, but the first version should stay focused on local CLI behavior.
 
 ## First Version Scope
 
@@ -55,7 +55,8 @@ The approved first version is intentionally small:
 | Language scope | English only |
 | Implementation | Python |
 | Evaluation style | Deterministic cue extraction and thresholding |
-| Primary output | Evidence table plus summary metrics |
+| Primary output | JSON evidence table plus summary metrics |
+| Lint workflow | Required `make lint` target |
 | ML dependency | None |
 | Deployment | None |
 
@@ -63,13 +64,15 @@ The approved first version is intentionally small:
 
 The first implementation should:
 
-- Accept assistant response text from a file or standard input.
+- Accept one assistant response per invocation from a file or standard input.
 - Normalize text deterministically.
 - Segment paragraphs and sentences.
 - Detect cue families with explicit patterns.
 - Emit evidence rows with matched span, cue family, position, sentence index, paragraph index, and pattern identifier.
 - Emit summary metrics such as counts by family, response length, paragraph count, sentence count, cue density, and first-paragraph cue count.
-- Include only transparent threshold flags derived from counts or densities.
+- Emit JSON by default.
+- Include deterministic threshold flags for high cue density and first-paragraph cue concentration.
+- Include a `Makefile` with a `lint` target.
 - Include focused tests for cue detection and output behavior.
 
 ## Out of Scope for the First Version
@@ -83,6 +86,9 @@ The first implementation should:
 - Hallucination or factuality detection.
 - Legal, medical, or safety correctness verification.
 - Deployment or infrastructure work.
+- Multi-file project scans.
+- Prompt-response pairing or conversation-history parsing.
+- CSV or JSONL output.
 
 ## Current Status
 
