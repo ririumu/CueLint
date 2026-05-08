@@ -52,19 +52,19 @@ flowchart TD
     end
 
     Start --> WD
-    WD --> RE
-    RE --> RA
+    WD -.->|skip: greenfield| RE
+    WD --> RA
     RA --> US
     US --> WP
     WP --> AD
-    AD --> UG
-    UG --> FD
-    FD --> NFRA
-    NFRA --> NFRD
-    NFRD --> ID
-    ID --> CG
+    AD -.->|skip: single CLI unit| UG
+    AD --> CG
+    CG -.->|skip: simple deterministic logic| FD
+    CG -.->|skip: NFRs already captured| NFRA
+    CG -.->|skip: no separate NFR design| NFRD
+    CG -.->|skip: no infrastructure| ID
     CG --> BT
-    BT --> OPS
+    BT -.->|placeholder| OPS
     OPS --> End(["Complete"])
 
     style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff

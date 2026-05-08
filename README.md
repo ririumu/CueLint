@@ -92,7 +92,7 @@ The first implementation should:
 
 ## Current Status
 
-The repository is currently at the end of AI-DLC Inception. Requirements and workflow planning are complete, and the next stage is Construction: Code Generation planning.
+The repository is currently at the end of AI-DLC Inception. Requirements, user stories, application design, and workflow planning are complete, and the next stage is Construction: Code Generation planning.
 
 No application code has been generated yet.
 
@@ -103,6 +103,16 @@ The planning artifacts live under `aidlc-docs/`:
 - `aidlc-docs/inception/inception-summary.md`
 - `aidlc-docs/inception/requirements/requirements.md`
 - `aidlc-docs/inception/requirements/requirement-verification-questions.md`
+- `aidlc-docs/inception/user-stories/personas.md`
+- `aidlc-docs/inception/user-stories/stories.md`
+- `aidlc-docs/inception/application-design/application-design.md`
+- `aidlc-docs/inception/application-design/components.md`
+- `aidlc-docs/inception/application-design/component-methods.md`
+- `aidlc-docs/inception/application-design/services.md`
+- `aidlc-docs/inception/application-design/component-dependency.md`
+- `aidlc-docs/inception/plans/user-stories-assessment.md`
+- `aidlc-docs/inception/plans/story-generation-plan.md`
+- `aidlc-docs/inception/plans/application-design-plan.md`
 - `aidlc-docs/inception/plans/execution-plan.md`
 - `aidlc-docs/aidlc-state.md`
 - `aidlc-docs/audit.md`

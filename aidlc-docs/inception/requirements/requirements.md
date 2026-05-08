@@ -6,7 +6,7 @@
 - **Request type**: New project.
 - **Scope estimate**: Single small CLI application with internally reusable parsing/audit modules.
 - **Complexity estimate**: Simple initial version, with future expansion paths for SDK packaging, multilingual cues, and classical ML calibration.
-- **Requirements depth**: Minimal.
+- **Requirements depth**: Minimal final requirements, following standard clarification questions.
 - **Product name**: CueLint.
 - **Primary persona**: Researcher using AI.
 
