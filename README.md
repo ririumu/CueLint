@@ -92,7 +92,7 @@ The first implementation should:
 
 ## Current Status
 
-The repository is currently at the end of AI-DLC Inception. Requirements, user stories, application design, and workflow planning are complete, and the next stage is Construction: Code Generation planning.
+The repository is currently in AI-DLC Construction at the Code Generation Planning approval gate. Inception is complete, the formal Code Generation Plan has been created, and application code generation is waiting for explicit approval.
 
 No application code has been generated yet.
 

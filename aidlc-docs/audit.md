@@ -10,6 +10,21 @@
 **Context**: Coach grading request for completed Inception deliverables with explicit web search requirement.
 
 ---
+## Bootcamp Artifact Regrading After Code Generation Plan
+**Timestamp**: 2026-05-08T08:58:00Z
+**User Input**: "採点を受けてチームは成果物を更新した。
+当該リポジトリを総合的に確認し、採点せよ。"
+**AI Response**: "Began comprehensive regrading of updated artifacts after the team added a formal Code Generation Plan, focusing on whether prior readiness findings were incorporated into concrete, approval-gated Construction planning."
+**Context**: Updated artifact review and bootcamp-style regrading request after Code Generation Planning artifact creation.
+
+---
+## Documentation Consistency Correction
+**Timestamp**: 2026-05-08T08:59:54Z
+**User Input**: "文書ズレがあります。README の Current Status は「Inception の終端、次は Construction: Code Generation planning」と書かれていますが、実際の state ではすでに Construction に入り、Code Generation Plan 作成済み・承認待ちです。；文書整合の作業をしてください。"
+**AI Response**: "Updated README Current Status to match aidlc-state.md: Construction phase, Code Generation Planning approval gate, formal Code Generation Plan created, and no application code generation before explicit approval."
+**Context**: Documentation consistency correction between README and AI-DLC state.
+
+---
 ## Bootcamp Inception Artifact Regrading
 **Timestamp**: 2026-05-08T08:53:02Z
 **User Input**: "採点を受けてチームは成果物を更新した。
