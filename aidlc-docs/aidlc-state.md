@@ -103,5 +103,7 @@
 - Inception summary created at `aidlc-docs/inception/inception-summary.md`.
 - Status: Complete.
 - Review status: Construction-ready after retrospective artifact completion and lightweight corrective actions.
+- Final review score: 92 / 100 on 2026-05-08; accepted as ready to proceed to Construction.
+- Code Generation Planning must explicitly address offset preservation, duplicate match policy, and sentence segmentation limitations.
 - Next action: Start Code Generation planning and stop at its approval gate.
 - Finalization commit requested with message `INCEPTION COMPLETE`.

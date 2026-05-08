@@ -114,6 +114,7 @@ The planning artifacts live under `aidlc-docs/`:
 - `aidlc-docs/inception/plans/story-generation-plan.md`
 - `aidlc-docs/inception/plans/application-design-plan.md`
 - `aidlc-docs/inception/plans/execution-plan.md`
+- `aidlc-docs/construction-readiness.md`
 - `aidlc-docs/aidlc-state.md`
 - `aidlc-docs/audit.md`
 

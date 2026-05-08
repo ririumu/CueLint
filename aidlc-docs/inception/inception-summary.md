@@ -57,6 +57,12 @@ Build CueLint, a minimal Python command-line tool for post-hoc auditing of Engli
 
 Code Generation begins with a planning step. The implementation plan must be reviewed and explicitly approved before any application code is generated.
 
+## Construction Readiness Notes
+
+- Final review score: 92 / 100.
+- Status: Approved to proceed to Construction.
+- Code Generation Planning should explicitly cover offset preservation, duplicate match policy, and sentence segmentation limitations because normalization, regular expression matching, and offsets are core quality risks for CueLint.
+
 ## Key References
 
 - Requirements: `aidlc-docs/inception/requirements/requirements.md`
