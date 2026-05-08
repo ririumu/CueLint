@@ -9,6 +9,9 @@
 - **Data model changes**: No persistent data model is required. The only structured outputs are evidence rows and summary metrics.
 - **API changes**: No external service API is required. The CLI interface is the primary contract.
 - **NFR impact**: Low. The key qualities are interpretability, maintainability, portability, and low-latency local execution.
+- **Product name**: CueLint.
+- **Primary persona**: Researcher using AI.
+- **Representative use case**: Lint-style local review, including future `make lint` compatibility.
 
 ### Risk Assessment
 
@@ -160,7 +163,7 @@ Not applicable. This is a greenfield single-package implementation.
 
 ## Success Criteria
 
-- **Primary Goal**: A Python CLI can audit English assistant response text and emit interpretable cue evidence.
+- **Primary Goal**: CueLint can audit English assistant response text from a Python CLI and emit interpretable cue evidence.
 - **Key Deliverables**:
   - Python project structure.
   - Deterministic cue detection kernel.

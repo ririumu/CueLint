@@ -1,22 +1,30 @@
-# Requirements: Classical Cue-Based Audit Kernel
+# Requirements: CueLint
 
 ## Intent Analysis
 
-- **User request**: Build a lightweight, classical, cue-based audit kernel for detecting recurring disliked LLM output behaviors through surface discourse operators.
+- **User request**: Build CueLint, a lightweight, classical, cue-based audit kernel for detecting recurring disliked LLM output behaviors through surface discourse operators.
 - **Request type**: New project.
 - **Scope estimate**: Single small CLI application with internally reusable parsing/audit modules.
 - **Complexity estimate**: Simple initial version, with future expansion paths for SDK packaging, multilingual cues, and classical ML calibration.
 - **Requirements depth**: Minimal.
+- **Product name**: CueLint.
+- **Primary persona**: Researcher using AI.
 
 ## Product Summary
 
 The first version will be a local command-line tool that accepts LLM assistant output text and emits an interpretable evidence table. It will focus on English responses and detect deterministic cue families related to negation, refusal, disclaimers, meta-negation, and contrastive reframing. The product is an audit instrument, not a semantic judge.
+
+The primary user is a researcher using AI who wants a lint-style way to inspect saved or piped assistant responses for recurring discourse patterns. The intended workflow should be compatible with command-line habits such as `make lint`.
 
 ## Functional Requirements
 
 ### FR1: Input Handling
 
 The tool must accept an assistant response as input from a text file or standard input.
+
+### FR1.1: Lint Workflow Compatibility
+
+The tool should be usable from lint-style workflows, including a future `make lint` target, without requiring network access or an LLM judge.
 
 ### FR2: Deterministic Normalization
 

@@ -1,6 +1,7 @@
 # AI-DLC State Tracking
 
 ## Project Information
+- **Product Name**: CueLint
 - **Project Type**: Greenfield
 - **Start Date**: 2026-05-08T07:43:50Z
 - **Current Phase**: CONSTRUCTION
@@ -32,6 +33,8 @@
 - **Total Stages Remaining**: 2
 - **Stages to Execute**: Code Generation, Build and Test
 - **Stages to Skip**: User Stories, Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Infrastructure Design
+- **Primary Persona**: Researcher using AI
+- **Representative Use Case**: Lint-style local review, including future `make lint` compatibility
 
 ## Stage Progress
 

@@ -154,6 +154,30 @@ Do not proceed past any AI-DLC approval gate without my explicit approval."
 
 ---
 
+## README Refinement
+**Timestamp**: 2026-05-08T08:10:50Z
+**User Input**: "README をリファインして、それからコミットして task done して"
+**AI Response**: "Refined `README.md` to foreground CueLint's product name, researcher-using-AI persona, lint-style workflow, implementation status, and first-version scope before committing the documentation updates."
+**Context**: README refinement and documentation commit.
+
+---
+
+## Product Naming and Persona Update
+**Timestamp**: 2026-05-08T08:08:52Z
+**User Input**: "CueLint が良いと思いますよ。 make lint などがユースケースです。また researcher using ai がユーザペルソナになります。これらも、 aidlc docs に書くべきと言う理解ですが、ウェブ公式はなんと言ってる？もし書くべきなら、書いて"
+**AI Response**: "Checked official/public product documentation guidance: Atlassian describes user stories as persona + need + purpose, and GitHub Docs says a README should explain why a project is useful, what users can do with it, and how to use it. Updated README and AI-DLC Inception artifacts to use the product name CueLint, identify the primary persona as researcher using AI, and capture lint-style usage including future `make lint` compatibility."
+**Context**: Product naming, persona, and use-case update from web-informed review.
+
+---
+
+## README Creation
+**Timestamp**: 2026-05-08T08:06:02Z
+**User Input**: "aidlc-docs や我々の Intent から README を書いて"
+**AI Response**: "Created `README.md` from the approved AI-DLC Inception artifacts and captured product intent, clearly separating current repository status from planned first-version behavior."
+**Context**: Repository documentation creation from Inception artifacts.
+
+---
+
 ## Inception Artifact Web Review
 **Timestamp**: 2026-05-08T08:03:29Z
 **User Input**: "ウェブ等を見た上でレビューして、問題なければコミットして、問題あれば修正の上コミットして"

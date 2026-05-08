@@ -6,11 +6,14 @@ Inception is complete. The next stage is Construction: Code Generation planning.
 
 ## Approved Direction
 
-Build a minimal Python command-line tool for post-hoc auditing of English LLM assistant responses. The first version should detect deterministic cue families and emit interpretable evidence rather than semantic judgments.
+Build CueLint, a minimal Python command-line tool for post-hoc auditing of English LLM assistant responses. The first version should detect deterministic cue families and emit interpretable evidence rather than semantic judgments.
 
 ## Approved Scope
 
 - Local CLI.
+- Product name: CueLint.
+- Primary persona: Researcher using AI.
+- Lint-style usage, including compatibility with a future `make lint` target.
 - English-only input.
 - Deterministic normalization and cue matching.
 - Evidence table output.
