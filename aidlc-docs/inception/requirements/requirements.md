@@ -40,9 +40,9 @@ The tool must emit a structured evidence table containing matched span text, cue
 
 The tool must compute simple summary metrics, including cue counts by family, total response length, paragraph count, sentence count, cue density, and first-paragraph cue count.
 
-### FR6: Deterministic Flagging
+### FR6: Deterministic Threshold Flags
 
-The first version may include deterministic threshold flags, but it must not require a trained ML classifier.
+The first version must include deterministic threshold flags only when they are computed from transparent counts or densities. It must not require or include a trained ML classifier.
 
 ## Non-Functional Requirements
 

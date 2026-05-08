@@ -12,6 +12,14 @@ Do not proceed past any AI-DLC approval gate without my explicit approval."
 
 ---
 
+## Inception Artifact Remediation
+**Timestamp**: 2026-05-08T08:01:49Z
+**User Input**: "矛盾の修正と、不足の成果物の作成を行なって。"
+**AI Response**: "Corrected state and execution-plan inconsistencies after Workflow Planning approval, clarified deterministic threshold flag requirements, normalized SKIP markers to SKIPPED, and created `aidlc-docs/inception/inception-summary.md` as the missing Inception completion artifact."
+**Context**: Inception artifact review remediation before Code Generation.
+
+---
+
 ## Workflow Planning Approval Response
 **Timestamp**: 2026-05-08T07:56:02Z
 **User Input**: "D) Approve BUT not Code Generation INSTEAD Commit to Git"
@@ -143,5 +151,13 @@ Treat this as the first stage of Inception. Create or resume `aidlc-docs/aidlc-s
 Do not proceed past any AI-DLC approval gate without my explicit approval."
 **AI Response**: "Workspace root `<workspace-root>` contains AI-DLC rules and `AGENTS.md`, but no source files or build manifests. Existing code: No. Programming languages: none detected. Build system: none detected. Project structure: empty / documentation-only workspace. Project type: Greenfield. Reverse Engineering needed: No. Next stage: Requirements Analysis."
 **Context**: Workspace Detection completion.
+
+---
+
+## Inception Artifact Web Review
+**Timestamp**: 2026-05-08T08:03:29Z
+**User Input**: "ウェブ等を見た上でレビューして、問題なければコミットして、問題あれば修正の上コミットして"
+**AI Response**: "Reviewed Inception artifacts against official Mermaid flowchart syntax and GitHub Markdown table guidance, ran local consistency checks for Mermaid blocks, tables, stale REVIEW markers, and state alignment, and prepared remediated artifacts for commit."
+**Context**: Web-informed artifact review and pre-commit validation.
 
 ---

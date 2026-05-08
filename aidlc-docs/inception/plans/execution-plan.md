@@ -30,7 +30,7 @@ flowchart TD
         RE["Reverse Engineering<br/><b>SKIP</b>"]
         RA["Requirements Analysis<br/><b>COMPLETED</b>"]
         US["User Stories<br/><b>SKIP</b>"]
-        WP["Workflow Planning<br/><b>REVIEW</b>"]
+        WP["Workflow Planning<br/><b>COMPLETED</b>"]
         AD["Application Design<br/><b>SKIP</b>"]
         UG["Units Generation<br/><b>SKIP</b>"]
     end
@@ -94,7 +94,7 @@ INCEPTION
 - Reverse Engineering: SKIP
 - Requirements Analysis: COMPLETED
 - User Stories: SKIP
-- Workflow Planning: REVIEW
+- Workflow Planning: COMPLETED
 - Application Design: SKIP
 - Units Generation: SKIP
 
@@ -120,22 +120,22 @@ OPERATIONS
 - [x] Requirements Analysis - COMPLETED
 - [x] User Stories - SKIPPED
   - **Rationale**: First version is a local technical tool with one primary usage mode and minimal scope.
-- [ ] Workflow Planning - REVIEW
-  - **Rationale**: Current stage; awaiting explicit approval.
-- [x] Application Design - SKIP
+- [x] Workflow Planning - COMPLETED
+  - **Rationale**: Execution plan approved by user.
+- [x] Application Design - SKIPPED
   - **Rationale**: Component boundaries are small enough to define in the code generation plan.
-- [x] Units Generation - SKIP
+- [x] Units Generation - SKIPPED
   - **Rationale**: A single implementation unit is sufficient.
 
 ### CONSTRUCTION PHASE
 
-- [x] Functional Design - SKIP
+- [x] Functional Design - SKIPPED
   - **Rationale**: Business logic is simple deterministic matching and can be captured in the code generation plan.
-- [x] NFR Requirements - SKIP
+- [x] NFR Requirements - SKIPPED
   - **Rationale**: Key NFRs are already minimal and captured in requirements.
-- [x] NFR Design - SKIP
+- [x] NFR Design - SKIPPED
   - **Rationale**: No separate NFR patterns are needed for the prototype.
-- [x] Infrastructure Design - SKIP
+- [x] Infrastructure Design - SKIPPED
   - **Rationale**: No deployment or infrastructure work is required.
 - [ ] Code Generation - EXECUTE
   - **Rationale**: Implementation plan, code, tests, and CLI behavior are required.
