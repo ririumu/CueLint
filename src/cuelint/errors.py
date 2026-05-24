@@ -8,3 +8,7 @@ class InputError(CueLintError):
 
 class OutputFormatError(CueLintError):
     """Raised when an unsupported output format is requested."""
+
+
+class UnsupportedFormatError(OutputFormatError):
+    """Backward-compatible name for unsupported output format errors."""

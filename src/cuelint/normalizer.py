@@ -68,7 +68,7 @@ def normalize_for_matching(text: str) -> MatchText:
 
 def segment_paragraphs(text: str) -> list[Paragraph]:
     paragraphs: list[Paragraph] = []
-    for index, match in enumerate(re.finditer(r"\S(?:.*?\S)?(?=\n\s*\n|\Z)", text, re.DOTALL)):
+    for index, match in enumerate(re.finditer(r"\S(?:.*?\S)?(?=\n\s*\n|\s*\Z)", text, re.DOTALL)):
         paragraphs.append(
             Paragraph(
                 index=index,

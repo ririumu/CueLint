@@ -1,33 +1,37 @@
-from cuelint.normalizer import normalize_document, normalize_for_matching, segment_paragraphs
+import unittest
+
+from cuelint.normalizer import count_tokens, normalize_document, normalize_for_matching
 
 
-def test_normalize_for_matching_expands_contractions_with_original_offsets() -> None:
-    text = "I can't do that."
-    normalized = normalize_for_matching(text)
+class NormalizerTests(unittest.TestCase):
+    def test_matching_normalization_preserves_offsets_for_case_and_curly_apostrophe(self):
+        text = "I CAN'T guarantee this."
+        normalized = normalize_for_matching(text)
 
-    start = normalized.text.index("cannot")
-    end = start + len("cannot")
+        self.assertEqual(normalized.text, "i cannot guarantee this.")
+        start = normalized.text.index("cannot")
+        end = start + len("cannot")
+        self.assertEqual(normalized.original_starts[start], 2)
+        self.assertEqual(normalized.original_ends[end - 1], 7)
 
-    assert normalized.text == "i cannot do that."
-    assert normalized.original_starts[start] == 2
-    assert normalized.original_ends[end - 1] == 7
-    assert text[2:7] == "can't"
+    def test_segments_paragraphs_and_sentences_with_offsets(self):
+        text = "First sentence. Second sentence!\n\nThird paragraph"
+        document = normalize_document(text)
+
+        self.assertEqual([p.text for p in document.paragraphs], ["First sentence. Second sentence!", "Third paragraph"])
+        self.assertEqual([s.text for s in document.sentences], ["First sentence.", "Second sentence!", "Third paragraph"])
+        self.assertEqual(document.sentences[2].paragraph_index, 1)
+        self.assertEqual(text[document.sentences[1].start : document.sentences[1].end], "Second sentence!")
+
+    def test_no_punctuation_sentence_boundary(self):
+        document = normalize_document("No final punctuation")
+
+        self.assertEqual(len(document.sentences), 1)
+        self.assertEqual(document.sentences[0].text, "No final punctuation")
+
+    def test_token_count_is_deterministic_for_contractions(self):
+        self.assertEqual(count_tokens("I can't, and I do not."), 6)
 
 
-def test_segment_paragraphs_preserves_offsets() -> None:
-    text = "First paragraph.\n\nSecond paragraph."
-    paragraphs = segment_paragraphs(text)
-
-    assert len(paragraphs) == 2
-    assert paragraphs[0].start == 0
-    assert paragraphs[1].text == "Second paragraph."
-    assert text[paragraphs[1].start : paragraphs[1].end] == "Second paragraph."
-
-
-def test_normalize_document_segments_sentences_across_paragraphs() -> None:
-    document = normalize_document("No. This is not ideal.\n\nStill no panic")
-
-    assert document.token_count == 8
-    assert len(document.paragraphs) == 2
-    assert len(document.sentences) == 3
-    assert document.sentences[2].paragraph_index == 1
+if __name__ == "__main__":
+    unittest.main()

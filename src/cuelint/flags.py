@@ -11,11 +11,11 @@ def evaluate_flags(metrics: SummaryMetrics, thresholds: ThresholdConfig) -> list
     return [
         Flag(
             flag_id="high_cue_density",
-            triggered=metrics.cue_density_per_100_tokens >= thresholds.high_cue_density_per_100_tokens,
-            metric="cue_density_per_100_tokens",
-            value=metrics.cue_density_per_100_tokens,
-            threshold=thresholds.high_cue_density_per_100_tokens,
-            description="Cue density meets or exceeds the configured per-100-token threshold.",
+            triggered=metrics.cue_density >= thresholds.high_cue_density,
+            metric="cue_density",
+            value=metrics.cue_density,
+            threshold=thresholds.high_cue_density,
+            description="Cue density meets or exceeds the configured evidence-per-token threshold.",
         ),
         Flag(
             flag_id="first_paragraph_concentration",

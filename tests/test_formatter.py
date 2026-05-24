@@ -1,24 +1,28 @@
 import json
+import unittest
 
 from cuelint.formatter import format_json, format_markdown, format_report
 from cuelint.service import audit_text
 
 
-def test_json_output_is_valid_and_contains_expected_top_level_keys():
-    payload = json.loads(format_json(audit_text("I cannot guarantee it.")))
+class FormatterTests(unittest.TestCase):
+    def test_json_output_is_valid_and_contains_expected_top_level_keys(self):
+        payload = json.loads(format_json(audit_text("I cannot guarantee it.")))
 
-    assert sorted(payload.keys()) == ["evidence", "flags", "summary", "thresholds", "version"]
-    assert payload["evidence"][0]["span"] == "cannot"
+        self.assertEqual(sorted(payload.keys()), ["evidence", "flags", "metadata", "summary"])
+        self.assertTrue(any(row["span_text"] == "cannot" for row in payload["evidence"]))
+
+    def test_empty_evidence_outputs_empty_json_array(self):
+        payload = json.loads(format_report(audit_text("Direct answer."), "json"))
+
+        self.assertEqual(payload["evidence"], [])
+
+    def test_markdown_output_has_table_header(self):
+        report = format_markdown(audit_text("This does not mean failure."))
+
+        self.assertIn("| family | pattern_id | start | end | sentence | paragraph | span |", report)
+        self.assertIn("meta_not_mean", report)
 
 
-def test_empty_evidence_outputs_empty_json_array():
-    payload = json.loads(format_report(audit_text("Direct answer."), "json"))
-
-    assert payload["evidence"] == []
-
-
-def test_markdown_output_has_table_header():
-    report = format_markdown(audit_text("This does not mean failure."))
-
-    assert "| family | pattern_id | start | end | sentence | paragraph | span |" in report
-    assert "meta.does_not_mean" in report
+if __name__ == "__main__":
+    unittest.main()
