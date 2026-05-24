@@ -417,3 +417,11 @@ User Stories と Application Design は依然として COMPLETED RETROSPECTIVELY
 **Context**: Code Generation completed after user-directed four-block iteration flow.
 
 ---
+
+## Release Readiness and Repository Hygiene
+**Timestamp**: 2026-05-24T07:14:00Z
+**User Input**: "はい。公開前にすべきことを一通り、次のブロックで、やりきってください"
+**AI Response**: "Completed release-readiness cleanup: added license and package metadata, configured setuptools src-layout packaging, updated README pre-publication guidance, removed local caches, verified tests, lint workflow, stdin, Markdown output, wheel build, wheel contents, and installed-wheel execution."
+**Context**: Public-release preparation block after CueLint v1 implementation completion.
+
+---
