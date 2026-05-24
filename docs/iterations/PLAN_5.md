@@ -24,9 +24,9 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] commit density calibration changes
 - [x] self-merge `codex/density-calibration` to `main`
 - [x] clear it `[x]`
-- [ ] cut branch `codex/release-evidence`
-- [ ] record public release readiness evidence and final verification
-- [ ] run the full local verification suite
+- [x] cut branch `codex/release-evidence`
+- [x] record public release readiness evidence and final verification
+- [x] run the full local verification suite
 - [ ] commit release evidence
 - [ ] self-merge `codex/release-evidence` to `main`
 - [ ] clear it `[x]`

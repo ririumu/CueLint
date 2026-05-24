@@ -14,7 +14,7 @@
 - 2026-05-24T15:44:00+09:00: Self-merged `codex/portfolio-positioning` into `main`.
 - 2026-05-24T15:44:00+09:00: Cleared the portfolio positioning checklist item.
 - 2026-05-24T15:45:00+09:00: Created branch `codex/cue-catalog-hardening`.
-- 2026-05-24T15:47:00+09:00: Added `hedging` as a cue family and broadened deterministic patterns from 21 to 57 entries.
+- 2026-05-24T15:47:00+09:00: Added `hedging` as a cue family and broadened deterministic patterns from 21 to 52 entries.
 - 2026-05-24T15:48:00+09:00: Added detector tests for expanded refusal/reframing, safety-script disclaimer, and hedging cues.
 - 2026-05-24T15:48:00+09:00: Ran detector, formatter, and metrics/flags tests: 13 tests passed.
 - 2026-05-24T15:48:00+09:00: Ran sample CLI audit to inspect expanded evidence output.
@@ -31,6 +31,13 @@
 - 2026-05-24T15:55:00+09:00: Committed density calibration changes as `232ae58`.
 - 2026-05-24T15:55:00+09:00: Self-merged `codex/density-calibration` into `main`.
 - 2026-05-24T15:55:00+09:00: Cleared the density calibration checklist item.
+- 2026-05-24T15:56:00+09:00: Confirmed `gh` is installed and no remote tags currently exist on `origin2`.
+- 2026-05-24T15:56:00+09:00: Created branch `codex/release-evidence`.
+- 2026-05-24T15:57:00+09:00: Ran `make test`: 25 tests passed.
+- 2026-05-24T15:57:00+09:00: Ran `make lint`: JSON evidence emitted successfully.
+- 2026-05-24T15:57:00+09:00: Ran Markdown output smoke test successfully.
+- 2026-05-24T15:58:00+09:00: Counted cue patterns by family: 52 total patterns across 6 cue families.
+- 2026-05-24T15:58:00+09:00: Created `docs/release-readiness-v0.1.0.md` with critique response, pattern inventory, verification commands, and release judgment.
 
 ## Findings
 
