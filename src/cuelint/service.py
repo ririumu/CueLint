@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from cuelint import __version__
 from cuelint.detector import detect_cues
 from cuelint.flags import default_thresholds, evaluate_flags
 from cuelint.metrics import calculate_metrics
@@ -18,4 +19,17 @@ def audit_text(text: str, config: AuditConfig | None = None) -> AuditResult:
     evidence = detect_cues(document, load_patterns())
     summary = calculate_metrics(document, evidence)
     flags = evaluate_flags(summary, runtime_config.thresholds)
-    return AuditResult(evidence=evidence, summary=summary, flags=flags, thresholds=runtime_config.thresholds)
+    return AuditResult(
+        evidence=evidence,
+        summary=summary,
+        flags=flags,
+        metadata={
+            "version": __version__,
+            "language_scope": "en",
+            "deterministic": True,
+            "thresholds": {
+                "high_cue_density": runtime_config.thresholds.high_cue_density,
+                "first_paragraph_cue_count": runtime_config.thresholds.first_paragraph_cue_count,
+            },
+        },
+    )

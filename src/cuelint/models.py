@@ -90,6 +90,7 @@ class SummaryMetrics:
 class Flag:
     flag_id: str
     triggered: bool
+    metric: str
     value: float | int
     threshold: float | int
     description: str
@@ -120,4 +121,4 @@ class AuditResult:
 @dataclass(frozen=True)
 class CliOptions:
     input_path: str | None
-    output_format: str
+    output_format: str = "json"

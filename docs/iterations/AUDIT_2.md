@@ -8,3 +8,6 @@
 - 2026-05-24T06:31:00Z: Implemented package metadata, shared models, errors, normalization, cue patterns, detection, and core tests.
 - 2026-05-24T06:32:00Z: `python -m pytest` could not run because `pytest` is not installed in the current interpreter.
 - 2026-05-24T06:32:00Z: Verified core imports and detection manually with `PYTHONPATH=src python`.
+- 2026-05-24T06:35:00Z: Cut branch `codex/block-2-reporting` from `main`.
+- 2026-05-24T06:40:00Z: Aligned metrics, flags, service, JSON formatter, Markdown formatter, and tests with the planned output contract.
+- 2026-05-24T06:41:00Z: Ran `PYTHONPATH=src python -m unittest discover -s tests`: 22 tests passed.

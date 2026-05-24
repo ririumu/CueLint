@@ -35,7 +35,7 @@ class CliTests(unittest.TestCase):
         finally:
             sys.stdin = old_stdin
         output = json.loads(stdout.getvalue())
-        self.assertGreaterEqual(output["summary"]["evidence_count"], 2)
+        self.assertGreaterEqual(output["summary"]["cue_count"], 2)
 
     def test_cli_file_input(self):
         with tempfile.TemporaryDirectory() as tmpdir:

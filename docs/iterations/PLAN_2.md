@@ -9,7 +9,7 @@ Goal: complete CueLint v1 in four block iterations, following the repository ite
 ## Block Checklist
 
 - [x] Block 1: cut branch -> implement project core -> commit -> self-merge -> clear it [x]
-- [ ] Block 2: cut branch -> implement metrics, flags, service, formatters -> commit -> self-merge -> clear it [x]
+- [x] Block 2: cut branch -> implement metrics, flags, service, formatters -> commit -> self-merge -> clear it [x]
 - [ ] Block 3: cut branch -> implement CLI, Makefile, sample, README updates -> commit -> self-merge -> clear it [x]
 - [ ] Block 4: cut branch -> verification, construction summary, final plan updates -> commit -> self-merge -> clear it [x]
 
