@@ -13,9 +13,9 @@ Before making this repository public, audit the current tree and git history for
 - [x] inspect commit log metadata and messages for publication risks
 - [x] review packaging and ignored/local artifacts for accidental publication
 - [x] record audit evidence and findings
-- [ ] commit public-readiness audit notes
-- [ ] self-merge to `main`
-- [ ] clear it `[x]`
+- [x] commit public-readiness audit notes
+- [x] self-merge to `main`
+- [x] clear it `[x]`
 
 ## Completion Criteria
 

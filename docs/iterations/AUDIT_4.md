@@ -13,6 +13,9 @@
 - 2026-05-24T15:35:00+09:00: Re-ran current-tree absolute-path and credential-signature scans; no hits remained outside `.git/`.
 - 2026-05-24T15:36:00+09:00: Re-ran history scan for obvious phone-like, SSN-like, and credit-card-like numeric PII patterns; no hits found.
 - 2026-05-24T15:36:00+09:00: Ran `make test`: 22 tests passed.
+- 2026-05-24T15:37:00+09:00: Committed public-readiness audit notes on `codex/public-readiness-audit`.
+- 2026-05-24T15:37:00+09:00: Self-merged `codex/public-readiness-audit` into `main`.
+- 2026-05-24T15:38:00+09:00: Cleared iteration checklist.
 
 ## Findings
 
