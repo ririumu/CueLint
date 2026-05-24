@@ -41,6 +41,8 @@
 - 2026-05-24T15:59:00+09:00: Committed release evidence as `03701b4`.
 - 2026-05-24T15:59:00+09:00: Self-merged `codex/release-evidence` into `main`.
 - 2026-05-24T15:59:00+09:00: Cleared the release evidence checklist item and completion criteria.
+- 2026-05-24T16:00:00+09:00: Ran final `make test` on `main`: 25 tests passed.
+- 2026-05-24T16:00:00+09:00: Ran final `make lint` on `main`: JSON evidence emitted successfully with cue-cluster density metadata.
 
 ## Findings
 
