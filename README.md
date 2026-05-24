@@ -4,7 +4,7 @@ A CLI linter for researchers who use AI and want inspectable evidence of recurri
 
 CueLint will audit saved or piped assistant responses with deterministic cue detection. The first version is intentionally small: English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
-> Current status: CueLint v1 application code has been generated in Construction and is available as a local Python CLI.
+> Current status: CueLint v1 is implemented, verified, and ready for pre-publication review as a local Python CLI.
 
 ## Purpose
 
@@ -45,6 +45,12 @@ make lint
 In the first version, this means running deterministic checks against one saved or piped assistant response per invocation and returning evidence that a researcher can inspect. Future versions may expose richer project-level linting, but the first version should stay focused on local CLI behavior.
 
 ## Local Usage
+
+Install locally in editable mode:
+
+```sh
+python -m pip install -e .
+```
 
 Run against the included sample:
 
@@ -166,7 +172,7 @@ The first implementation should:
 
 ## Current Status
 
-The repository is currently in AI-DLC Construction after Code Generation. The generated application code lives under `src/cuelint/`, tests live under `tests/`, and local workflow targets are provided by `Makefile`.
+The repository is currently in AI-DLC Construction after Code Generation and Build/Test verification. The generated application code lives under `src/cuelint/`, tests live under `tests/`, and local workflow targets are provided by `Makefile`.
 
 ## AI-DLC Artifacts
 
@@ -193,4 +199,4 @@ The planning artifacts live under `aidlc-docs/`:
 
 ## Next Step
 
-Run verification with `make test` and `make lint`, then proceed through the remaining Construction Build and Test closure artifacts.
+Before publishing, confirm repository visibility, remote ownership, release tag strategy, and whether the local commits should be pushed as-is or squashed outside this repository's iteration history.
