@@ -1,16 +1,16 @@
 # CueLint
 
-A CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
+A deterministic CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
 
-CueLint will audit saved or piped assistant responses with deterministic cue detection. The first version is intentionally small: English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
+CueLint audits saved or piped assistant responses with deterministic cue detection. Version 0.1 is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
-> Current status: CueLint v1 is implemented, verified, and ready for pre-publication review as a local Python CLI.
+> Current status: CueLint v0.1.0 is a public, verified local Python CLI and portfolio release.
 
 ## Purpose
 
-CueLint is intended to become a lightweight Python command-line tool for post-hoc auditing of English assistant responses. It focuses on stable textual operators that often appear in disliked LLM behaviors, such as negation, refusal, disclaimers, meta-negation, and contrastive reframing.
+CueLint is a lightweight Python command-line tool for post-hoc auditing of English assistant responses. It focuses on stable textual operators that often appear in disliked LLM behaviors, such as negation, refusal, disclaimers, meta-negation, contrastive reframing, and hedging.
 
-CueLint is not intended to be a semantic judge. It will not decide whether an answer is factually correct, legally safe, medically sound, or globally "bad." Instead, it should expose inspectable evidence: matched cue spans, cue families, positions, counts, densities, and simple threshold-derived signals.
+CueLint is deliberately non-semantic: it does not decide whether an answer is factually correct, legally safe, medically sound, or globally "bad." Its job is evidence extraction: matched cue spans, cue families, positions, counts, density signals, and deterministic threshold flags that a human can inspect.
 
 ## Target User
 
@@ -31,18 +31,21 @@ Many disliked assistant behaviors are heterogeneous at the user-experience level
 - `cannot guarantee`
 - `does not mean`
 - `not necessarily`
+- `in general`
+- `it depends`
+- `may vary`
 
-The first product move is to capture those signals with deterministic text processing and present them as evidence for human review.
+CueLint captures those signals with deterministic text processing and presents them as evidence for human review.
 
 ## Intended Workflow
 
-CueLint should fit naturally into lint-style workflows. A representative target workflow is:
+CueLint fits naturally into lint-style workflows. A representative workflow is:
 
 ```sh
 make lint
 ```
 
-In the first version, this means running deterministic checks against one saved or piped assistant response per invocation and returning evidence that a researcher can inspect. Future versions may expose richer project-level linting, but the first version should stay focused on local CLI behavior.
+Version 0.1 runs deterministic checks against one saved or piped assistant response per invocation and returns evidence that a researcher can inspect. The scope is intentionally tight so the output remains transparent, fast, and reproducible.
 
 ## Local Usage
 
@@ -87,7 +90,7 @@ PYTHONPATH=src python -m cuelint --format markdown samples/assistant-response.tx
 JSON is the default output format. The top-level object contains:
 
 - `evidence`: matched cue spans with `span_text`, `cue_family`, `start`, `end`, `sentence_index`, `paragraph_index`, and `pattern_id`.
-- `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue density, and first-paragraph cue count.
+- `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue cluster count, cue density, and first-paragraph cue count.
 - `flags`: deterministic threshold flags with metric, value, threshold, and trigger state.
 - `metadata`: version, language scope, deterministic marker, and threshold configuration.
 
@@ -118,15 +121,17 @@ Compact example:
 }
 ```
 
-## First-Version Limitations
+## Design Boundaries
 
 CueLint is an audit instrument, not a semantic judge. It does not detect factuality, hallucination, legal correctness, medical safety, or whether an answer is globally good or bad.
 
 Sentence segmentation is deterministic and intentionally simple. Abbreviations, decimals, initials, and unusual punctuation can produce imperfect sentence indexes; those indexes are evidence metadata, not semantic claims.
 
-## First Version Scope
+Nested cue spans are preserved in evidence. For density, overlapping local cue rows are collapsed into cue clusters so a phrase like `does not mean` remains inspectable without inflating the density metric three times.
 
-The first version is intentionally small:
+## Version 0.1 Scope
+
+Version 0.1 is deliberately focused:
 
 | Area | Decision |
 |---|---|
@@ -140,22 +145,22 @@ The first version is intentionally small:
 | ML dependency | None |
 | Deployment | None |
 
-## Core Requirements
+## Implemented Requirements
 
-The first implementation should:
+Version 0.1:
 
-- Accept one assistant response per invocation from a file or standard input.
-- Normalize text deterministically.
-- Segment paragraphs and sentences.
-- Detect cue families with explicit patterns.
-- Emit evidence rows with matched span, cue family, position, sentence index, paragraph index, and pattern identifier.
-- Emit summary metrics such as counts by family, response length, paragraph count, sentence count, cue density, and first-paragraph cue count.
-- Emit JSON by default.
-- Include deterministic threshold flags for high cue density and first-paragraph cue concentration.
-- Include a `Makefile` with a `lint` target.
-- Include focused tests for cue detection and output behavior.
+- Accepts one assistant response per invocation from a file or standard input.
+- Normalizes text deterministically.
+- Segments paragraphs and sentences.
+- Detects cue families with explicit patterns.
+- Emits evidence rows with matched span, cue family, position, sentence index, paragraph index, and pattern identifier.
+- Emits summary metrics such as counts by family, response length, paragraph count, sentence count, cue cluster count, cue density, and first-paragraph cue count.
+- Emits JSON by default.
+- Includes deterministic threshold flags for high cue density and first-paragraph cue concentration.
+- Includes a `Makefile` with a `lint` target.
+- Includes focused tests for cue detection, metrics, flags, formatting, normalization, and CLI behavior.
 
-## Out of Scope for the First Version
+## Out of Scope for Version 0.1
 
 - SDK packaging.
 - API service.
@@ -169,7 +174,3 @@ The first implementation should:
 - Multi-file project scans.
 - Prompt-response pairing or conversation-history parsing.
 - CSV or JSONL output.
-
-## Next Step
-
-Before publishing, confirm repository visibility, remote ownership, release tag strategy, and whether the local commits should be pushed as-is or squashed for a cleaner public history.
