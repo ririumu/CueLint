@@ -4,7 +4,7 @@ A deterministic CLI linter for researchers who use AI and want inspectable evide
 
 CueLint audits saved or piped assistant responses with deterministic cue detection. Version 0.1.x is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
-> Current status: CueLint v0.1.0 is a public, verified local Python CLI and portfolio release.
+> Current status: CueLint v0.1.1 is a public, verified local Python CLI and portfolio release.
 
 ## Purpose
 

@@ -14,20 +14,20 @@ CueLint v0.1.1 is a scope-correction release. It should align public wording and
 - [x] cut branch `codex/v011-output-contract`
 - [x] add metadata interpretation-contract fields and tests
 - [x] commit output-contract changes
-- [ ] self-merge `codex/v011-output-contract` to `main`
-- [ ] clear it `[x]`
-- [ ] cut branch `codex/v011-release-evidence`
-- [ ] bump version to `0.1.1`
-- [ ] add release-readiness documentation
-- [ ] run full verification
-- [ ] commit release evidence
-- [ ] self-merge `codex/v011-release-evidence` to `main`
-- [ ] clear it `[x]`
+- [x] self-merge `codex/v011-output-contract` to `main`
+- [x] clear it `[x]`
+- [x] cut branch `codex/v011-release-evidence`
+- [x] bump version to `0.1.1`
+- [x] add release-readiness documentation
+- [x] run full verification
+- [x] commit release evidence
+- [x] self-merge `codex/v011-release-evidence` to `main`
+- [x] clear it `[x]`
 
 ## Completion Criteria
 
 - [x] README describes CueLint as a surface cue evidence linter, not a quality evaluator or over-refusal classifier.
 - [x] JSON metadata records the interpretation contract without changing the CLI interface.
-- [ ] Version metadata reports `0.1.1`.
-- [ ] `make test`, `make lint`, and Markdown output smoke test pass.
-- [ ] Release evidence documents that v0.1.1 corrects scope framing rather than expanding capability.
+- [x] Version metadata reports `0.1.1`.
+- [x] `make test`, `make lint`, and Markdown output smoke test pass.
+- [x] Release evidence documents that v0.1.1 corrects scope framing rather than expanding capability.
