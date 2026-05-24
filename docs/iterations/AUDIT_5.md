@@ -28,6 +28,9 @@
 - 2026-05-24T15:54:00+09:00: Added tests proving `does not mean` emits three evidence rows but one density cluster.
 - 2026-05-24T15:54:00+09:00: Ran the full unittest suite: 25 tests passed.
 - 2026-05-24T15:54:00+09:00: Ran sample CLI audit; density dropped from raw evidence overcounting to 2 clusters / 29 tokens.
+- 2026-05-24T15:55:00+09:00: Committed density calibration changes as `232ae58`.
+- 2026-05-24T15:55:00+09:00: Self-merged `codex/density-calibration` into `main`.
+- 2026-05-24T15:55:00+09:00: Cleared the density calibration checklist item.
 
 ## Findings
 

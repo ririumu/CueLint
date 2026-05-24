@@ -21,9 +21,9 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] make cue density resilient to nested overlapping evidence rows
 - [x] expose the density basis in summary and metadata
 - [x] update threshold descriptions and tests
-- [ ] commit density calibration changes
-- [ ] self-merge `codex/density-calibration` to `main`
-- [ ] clear it `[x]`
+- [x] commit density calibration changes
+- [x] self-merge `codex/density-calibration` to `main`
+- [x] clear it `[x]`
 - [ ] cut branch `codex/release-evidence`
 - [ ] record public release readiness evidence and final verification
 - [ ] run the full local verification suite
