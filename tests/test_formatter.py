@@ -13,6 +13,10 @@ class FormatterTests(unittest.TestCase):
         self.assertTrue(any(row["span_text"] == "cannot" for row in payload["evidence"]))
         self.assertIn("cue_cluster_count", payload["summary"])
         self.assertEqual(payload["metadata"]["density_basis"], "overlapping cue spans are collapsed into cue clusters")
+        self.assertEqual(payload["metadata"]["analysis_scope"], "surface_cue_evidence")
+        self.assertEqual(payload["metadata"]["interpretation_contract"], "evidence_not_quality_label")
+        self.assertIn("semantic_quality", payload["metadata"]["not_evaluated"])
+        self.assertIn("over_refusal_classification", payload["metadata"]["not_evaluated"])
 
     def test_empty_evidence_outputs_empty_json_array(self):
         payload = json.loads(format_report(audit_text("Direct answer."), "json"))

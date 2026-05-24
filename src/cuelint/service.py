@@ -26,6 +26,15 @@ def audit_text(text: str, config: AuditConfig | None = None) -> AuditResult:
         metadata={
             "version": __version__,
             "language_scope": "en",
+            "analysis_scope": "surface_cue_evidence",
+            "interpretation_contract": "evidence_not_quality_label",
+            "not_evaluated": [
+                "factual_correctness",
+                "safety_correctness",
+                "semantic_quality",
+                "over_refusal_classification",
+                "user_intent",
+            ],
             "deterministic": True,
             "thresholds": {
                 "high_cue_density": runtime_config.thresholds.high_cue_density,
