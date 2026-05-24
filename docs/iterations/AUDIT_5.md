@@ -18,6 +18,9 @@
 - 2026-05-24T15:48:00+09:00: Added detector tests for expanded refusal/reframing, safety-script disclaimer, and hedging cues.
 - 2026-05-24T15:48:00+09:00: Ran detector, formatter, and metrics/flags tests: 13 tests passed.
 - 2026-05-24T15:48:00+09:00: Ran sample CLI audit to inspect expanded evidence output.
+- 2026-05-24T15:49:00+09:00: Committed cue catalog hardening as `f0cb7ed`.
+- 2026-05-24T15:49:00+09:00: Self-merged `codex/cue-catalog-hardening` into `main`.
+- 2026-05-24T15:49:00+09:00: Cleared the cue catalog hardening checklist item.
 
 ## Findings
 

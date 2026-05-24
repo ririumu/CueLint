@@ -14,9 +14,9 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] cut branch `codex/cue-catalog-hardening`
 - [x] broaden the deterministic cue catalog for refusal, disclaimers, meta-negation, contrastive reframing, and hedging
 - [x] add tests for the broadened catalog and overlapping evidence preservation
-- [ ] commit cue catalog hardening
-- [ ] self-merge `codex/cue-catalog-hardening` to `main`
-- [ ] clear it `[x]`
+- [x] commit cue catalog hardening
+- [x] self-merge `codex/cue-catalog-hardening` to `main`
+- [x] clear it `[x]`
 - [ ] cut branch `codex/density-calibration`
 - [ ] make cue density resilient to nested overlapping evidence rows
 - [ ] expose the density basis in summary and metadata
