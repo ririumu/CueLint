@@ -310,25 +310,25 @@ AWS 公式文脈はWeb検索で確認しました。AI-DLC は Inception / Const
 
 **強い点**
 
-要求定義はかなり良いです。CueLint の目的、対象ユーザー、第一版スコープ、非スコープが明確で、特に「監査器であって semantic judge ではない」という境界設定が優秀です。根拠: [requirements.md](<workspace-root>/aidlc-docs/inception/requirements/requirements.md:13), [requirements.md](<workspace-root>/aidlc-docs/inception/requirements/requirements.md:81)。
+要求定義はかなり良いです。CueLint の目的、対象ユーザー、第一版スコープ、非スコープが明確で、特に「監査器であって semantic judge ではない」という境界設定が優秀です。根拠: [requirements.md](/aidlc-docs/inception/requirements/requirements.md:13), [requirements.md](/aidlc-docs/inception/requirements/requirements.md:81)。
 
-ユーザーストーリーも実装可能な粒度です。stdin、file input、cue detection、JSON output、metrics、`make lint` まで受け入れ条件がテスト可能に落ちています。根拠: [stories.md](<workspace-root>/aidlc-docs/inception/user-stories/stories.md:3), [stories.md](<workspace-root>/aidlc-docs/inception/user-stories/stories.md:115)。
+ユーザーストーリーも実装可能な粒度です。stdin、file input、cue detection、JSON output、metrics、`make lint` まで受け入れ条件がテスト可能に落ちています。根拠: [stories.md](/aidlc-docs/inception/user-stories/stories.md:3), [stories.md](/aidlc-docs/inception/user-stories/stories.md:115)。
 
-アプリケーション設計は、CLI Adapter、Input Reader、Normalizer、Pattern Catalog、Detector、Metrics、Flags、Formatter という分割が自然です。Construction の Code Generation Planning に渡せる密度があります。根拠: [application-design.md](<workspace-root>/aidlc-docs/inception/application-design/application-design.md:15)。
+アプリケーション設計は、CLI Adapter、Input Reader、Normalizer、Pattern Catalog、Detector、Metrics、Flags、Formatter という分割が自然です。Construction の Code Generation Planning に渡せる密度があります。根拠: [application-design.md](/aidlc-docs/inception/application-design/application-design.md:15)。
 
 **減点ポイント**
 
 1. **承認ゲートの厳密性がやや弱い**
-   User Stories と Application Design が「retrospectively completed」として追加されていますが、個別ステージ完了後の明示的 approval gate が Requirements / Workflow Planning ほど明確ではありません。AI-DLC 的には、後追い作成でも「レビュー済み、承認済み」の証跡がもう一段ほしいです。根拠: [aidlc-state.md](<workspace-root>/aidlc-docs/aidlc-state.md:82)。
+   User Stories と Application Design が「retrospectively completed」として追加されていますが、個別ステージ完了後の明示的 approval gate が Requirements / Workflow Planning ほど明確ではありません。AI-DLC 的には、後追い作成でも「レビュー済み、承認済み」の証跡がもう一段ほしいです。根拠: [aidlc-state.md](/aidlc-docs/aidlc-state.md:82)。
 
 2. **要求深度の表現に小さな不整合**
-   state では Requirements depth assessment が `Standard`、requirements 本体では `Minimal` になっています。実態としては「質問は標準寄り、確定要求は最小」に見えるので致命傷ではありませんが、採点では整合性減点です。根拠: [aidlc-state.md](<workspace-root>/aidlc-docs/aidlc-state.md:70), [requirements.md](<workspace-root>/aidlc-docs/inception/requirements/requirements.md:9)。
+   state では Requirements depth assessment が `Standard`、requirements 本体では `Minimal` になっています。実態としては「質問は標準寄り、確定要求は最小」に見えるので致命傷ではありませんが、採点では整合性減点です。根拠: [aidlc-state.md](/aidlc-docs/aidlc-state.md:70), [requirements.md](/aidlc-docs/inception/requirements/requirements.md:9)。
 
 3. **README の artifact 一覧が最新成果物を反映していない**
-   README の AI-DLC Artifacts には user-stories と application-design 系が載っていません。リポジトリ利用者が成果物を発見しにくくなります。根拠: [README.md](<workspace-root>/README.md:99)。
+   README の AI-DLC Artifacts には user-stories と application-design 系が載っていません。リポジトリ利用者が成果物を発見しにくくなります。根拠: [README.md](/README.md:99)。
 
 4. **Workflow diagram が skipped stage を直列経由して見せる**
-   実行計画の Mermaid は `WD --> RE --> RA` のように skip stage を通常遷移に見せています。テキストでは SKIP と明記されているため大問題ではありませんが、AI-DLC の「条件付き・適応的」表現としては dashed optional edge の方がより正確です。根拠: [execution-plan.md](<workspace-root>/aidlc-docs/inception/plans/execution-plan.md:54)。"
+   実行計画の Mermaid は `WD --> RE --> RA` のように skip stage を通常遷移に見せています。テキストでは SKIP と明記されているため大問題ではありませんが、AI-DLC の「条件付き・適応的」表現としては dashed optional edge の方がより正確です。根拠: [execution-plan.md](/aidlc-docs/inception/plans/execution-plan.md:54)。"
 **AI Response**: "Accepted the review as Construction-ready with lightweight corrective actions. Updating approval trace, requirements depth wording, README artifact list, and workflow diagram optional skip paths."
 **Context**: Inception artifact review feedback and corrective action tracking.
 
