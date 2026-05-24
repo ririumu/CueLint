@@ -1,10 +1,10 @@
 # CueLint
 
-A planned CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
+A CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
 
 CueLint will audit saved or piped assistant responses with deterministic cue detection. The first version is intentionally small: English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
-> Current status: AI-DLC Inception is complete. Application code has not been generated yet.
+> Current status: CueLint v1 application code has been generated in Construction and is available as a local Python CLI.
 
 ## Purpose
 
@@ -43,6 +43,47 @@ make lint
 ```
 
 In the first version, this means running deterministic checks against one saved or piped assistant response per invocation and returning evidence that a researcher can inspect. Future versions may expose richer project-level linting, but the first version should stay focused on local CLI behavior.
+
+## Local Usage
+
+Run against the included sample:
+
+```sh
+make lint
+```
+
+Run tests:
+
+```sh
+make test
+```
+
+Audit a file:
+
+```sh
+PYTHONPATH=src python -m cuelint samples/assistant-response.txt
+```
+
+Audit stdin:
+
+```sh
+printf 'I cannot guarantee this does not mean failure.' | PYTHONPATH=src python -m cuelint
+```
+
+Emit Markdown instead of JSON:
+
+```sh
+PYTHONPATH=src python -m cuelint --format markdown samples/assistant-response.txt
+```
+
+## Output Shape
+
+JSON is the default output format. The top-level object contains:
+
+- `evidence`: matched cue spans with `span_text`, `cue_family`, `start`, `end`, `sentence_index`, `paragraph_index`, and `pattern_id`.
+- `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue density, and first-paragraph cue count.
+- `flags`: deterministic threshold flags with metric, value, threshold, and trigger state.
+- `metadata`: version, language scope, deterministic marker, and threshold configuration.
 
 ## First Version Scope
 
@@ -92,9 +133,7 @@ The first implementation should:
 
 ## Current Status
 
-The repository is currently in AI-DLC Construction at the Code Generation Planning approval gate. Inception is complete, the formal Code Generation Plan has been created, and application code generation is waiting for explicit approval.
-
-No application code has been generated yet.
+The repository is currently in AI-DLC Construction after Code Generation. The generated application code lives under `src/cuelint/`, tests live under `tests/`, and local workflow targets are provided by `Makefile`.
 
 ## AI-DLC Artifacts
 
@@ -121,4 +160,4 @@ The planning artifacts live under `aidlc-docs/`:
 
 ## Next Step
 
-Review and explicitly approve the Code Generation Plan at `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`. Application code must not be generated before that approval.
+Run verification with `make test` and `make lint`, then proceed through the remaining Construction Build and Test closure artifacts.

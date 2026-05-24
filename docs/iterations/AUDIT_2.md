@@ -11,3 +11,7 @@
 - 2026-05-24T06:35:00Z: Cut branch `codex/block-2-reporting` from `main`.
 - 2026-05-24T06:40:00Z: Aligned metrics, flags, service, JSON formatter, Markdown formatter, and tests with the planned output contract.
 - 2026-05-24T06:41:00Z: Ran `PYTHONPATH=src python -m unittest discover -s tests`: 22 tests passed.
+- 2026-05-24T06:42:00Z: Cut branch `codex/block-3-cli-docs` from `main`.
+- 2026-05-24T06:45:00Z: Adopted local `Makefile` and sample input, verified CLI help, and updated README for generated CLI usage and output shape.
+- 2026-05-24T06:46:00Z: Ran `make test`: 22 tests passed.
+- 2026-05-24T06:46:00Z: Ran `make lint`: sample audit produced JSON evidence, summary, flags, and metadata.
