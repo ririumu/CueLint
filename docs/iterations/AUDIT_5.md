@@ -13,6 +13,11 @@
 - 2026-05-24T15:43:00+09:00: Committed portfolio positioning changes as `cf1a56c`.
 - 2026-05-24T15:44:00+09:00: Self-merged `codex/portfolio-positioning` into `main`.
 - 2026-05-24T15:44:00+09:00: Cleared the portfolio positioning checklist item.
+- 2026-05-24T15:45:00+09:00: Created branch `codex/cue-catalog-hardening`.
+- 2026-05-24T15:47:00+09:00: Added `hedging` as a cue family and broadened deterministic patterns from 21 to 57 entries.
+- 2026-05-24T15:48:00+09:00: Added detector tests for expanded refusal/reframing, safety-script disclaimer, and hedging cues.
+- 2026-05-24T15:48:00+09:00: Ran detector, formatter, and metrics/flags tests: 13 tests passed.
+- 2026-05-24T15:48:00+09:00: Ran sample CLI audit to inspect expanded evidence output.
 
 ## Findings
 
