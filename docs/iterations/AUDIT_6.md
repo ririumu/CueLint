@@ -9,6 +9,15 @@
 - 2026-05-24T16:05:00+09:00: Updated README wording from response failure framing to surface discourse cue evidence framing.
 - 2026-05-24T16:05:00+09:00: Added an Interpretation Contract section clarifying that CueLint does not infer quality, over-refusal, safety correctness, factual correctness, semantic adequacy, or user intent.
 - 2026-05-24T16:06:00+09:00: Ran Python syntax compilation for package modules successfully.
+- 2026-05-24T16:07:00+09:00: Committed README scope-language changes as `54b8611`.
+- 2026-05-24T16:07:00+09:00: Self-merged `codex/v011-scope-language` into `main`.
+- 2026-05-24T16:07:00+09:00: Cleared the scope-language checklist item.
+- 2026-05-24T16:08:00+09:00: Created branch `codex/v011-output-contract`.
+- 2026-05-24T16:09:00+09:00: Added non-breaking JSON metadata fields for `analysis_scope`, `interpretation_contract`, and `not_evaluated`.
+- 2026-05-24T16:09:00+09:00: Updated README output metadata documentation and formatter tests for the interpretation contract.
+- 2026-05-24T16:10:00+09:00: Initial focused unittest command without `PYTHONPATH=src` failed with import errors; reran with repository test environment.
+- 2026-05-24T16:10:00+09:00: Ran focused formatter and CLI tests with `PYTHONPATH=src`: 10 tests passed.
+- 2026-05-24T16:10:00+09:00: Ran sample JSON audit and confirmed interpretation-contract metadata is emitted while version remains `0.1.0` until the release-evidence branch.
 
 ## Findings
 

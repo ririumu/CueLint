@@ -100,7 +100,7 @@ JSON is the default output format. The top-level object contains:
 - `evidence`: matched cue spans with `span_text`, `cue_family`, `start`, `end`, `sentence_index`, `paragraph_index`, and `pattern_id`.
 - `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue cluster count, cue density, first-paragraph cue count, and first-paragraph cue cluster count.
 - `flags`: deterministic threshold flags with metric, value, threshold, and trigger state.
-- `metadata`: version, language scope, deterministic marker, density basis, and threshold configuration.
+- `metadata`: version, language scope, deterministic marker, analysis scope, interpretation contract, non-evaluated claim list, density basis, and threshold configuration.
 
 Compact example:
 
@@ -125,6 +125,15 @@ Compact example:
   "flags": [],
   "metadata": {
     "language_scope": "en",
+    "analysis_scope": "surface_cue_evidence",
+    "interpretation_contract": "evidence_not_quality_label",
+    "not_evaluated": [
+      "factual_correctness",
+      "safety_correctness",
+      "semantic_quality",
+      "over_refusal_classification",
+      "user_intent"
+    ],
     "density_basis": "overlapping cue spans are collapsed into cue clusters",
     "deterministic": true
   }
