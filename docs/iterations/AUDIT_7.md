@@ -10,6 +10,17 @@
 - 2026-05-24T16:18:00+09:00: Reworked README language to avoid managed-product and roadmap expectations while preserving usage, output, and limits.
 - 2026-05-24T16:19:00+09:00: Verified README no longer contains `Current status`, `portfolio release`, `public, verified`, `Version 0.1.x Scope`, `Implemented Requirements`, `Out of Scope for Version`, or `Product Thesis`.
 - 2026-05-24T16:19:00+09:00: Ran `git diff --check` successfully.
+- 2026-05-24T16:20:00+09:00: Committed README expectation cleanup as `420c780`.
+- 2026-05-24T16:20:00+09:00: Self-merged `codex/readme-expectation-cleanup` into `main`.
+- 2026-05-24T16:20:00+09:00: Cleared the README expectation cleanup checklist item.
+- 2026-05-24T16:21:00+09:00: Created branch `codex/v012-release`.
+- 2026-05-24T16:21:00+09:00: Bumped package and runtime versions from `0.1.1` to `0.1.2`.
+- 2026-05-24T16:21:00+09:00: Added `docs/release-readiness-v0.1.2.md` documenting README expectation cleanup and release verification.
+- 2026-05-24T16:22:00+09:00: Ran `make test`: 25 tests passed.
+- 2026-05-24T16:22:00+09:00: Ran `make lint`: JSON evidence emitted successfully with version `0.1.2`.
+- 2026-05-24T16:22:00+09:00: Ran Markdown output smoke test successfully.
+- 2026-05-24T16:22:00+09:00: Re-ran README cleanup `rg` checks successfully.
+- 2026-05-24T16:22:00+09:00: Ran `git diff --check` successfully.
 
 ## Findings
 
