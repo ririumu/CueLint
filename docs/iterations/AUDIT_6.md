@@ -18,6 +18,19 @@
 - 2026-05-24T16:10:00+09:00: Initial focused unittest command without `PYTHONPATH=src` failed with import errors; reran with repository test environment.
 - 2026-05-24T16:10:00+09:00: Ran focused formatter and CLI tests with `PYTHONPATH=src`: 10 tests passed.
 - 2026-05-24T16:10:00+09:00: Ran sample JSON audit and confirmed interpretation-contract metadata is emitted while version remains `0.1.0` until the release-evidence branch.
+- 2026-05-24T16:11:00+09:00: Committed output-contract changes as `7542495`.
+- 2026-05-24T16:11:00+09:00: Self-merged `codex/v011-output-contract` into `main`.
+- 2026-05-24T16:11:00+09:00: Cleared the output-contract checklist item.
+- 2026-05-24T16:12:00+09:00: Created branch `codex/v011-release-evidence`.
+- 2026-05-24T16:13:00+09:00: Bumped package and runtime versions from `0.1.0` to `0.1.1`.
+- 2026-05-24T16:13:00+09:00: Added `docs/release-readiness-v0.1.1.md` documenting the scope-regrounding release position, output contract, verification plan, and release judgment.
+- 2026-05-24T16:14:00+09:00: Ran `make test`: 25 tests passed.
+- 2026-05-24T16:14:00+09:00: Ran `make lint`: JSON evidence emitted successfully with version `0.1.1` and interpretation-contract metadata.
+- 2026-05-24T16:14:00+09:00: Ran Markdown output smoke test successfully.
+- 2026-05-24T16:14:00+09:00: Reviewed README and v0.1.1 release readiness language for benchmark, semantic-evaluation, and LLM-as-judge replacement claims; remaining matches are explicit non-scope or release-correction statements.
+- 2026-05-24T16:15:00+09:00: Committed release evidence before self-merge.
+- 2026-05-24T16:15:00+09:00: Self-merged `codex/v011-release-evidence` into `main`.
+- 2026-05-24T16:15:00+09:00: Cleared the release-evidence checklist item and completion criteria.
 
 ## Findings
 
