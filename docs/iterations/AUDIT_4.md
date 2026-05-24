@@ -16,19 +16,24 @@
 - 2026-05-24T15:37:00+09:00: Committed public-readiness audit notes on `codex/public-readiness-audit`.
 - 2026-05-24T15:37:00+09:00: Self-merged `codex/public-readiness-audit` into `main`.
 - 2026-05-24T15:38:00+09:00: Cleared iteration checklist.
+- 2026-05-24T15:45:00+09:00: Rewrote all local refs with `git filter-branch --tree-filter` to replace user-home workspace absolute paths with `<workspace-root>` in every reachable commit.
+- 2026-05-24T15:46:00+09:00: Removed `refs/original`, expired reflogs, and ran aggressive garbage collection with immediate pruning.
+- 2026-05-24T15:47:00+09:00: Verified reachable history with `git grep` for absolute-path patterns; no hits found.
+- 2026-05-24T15:47:00+09:00: Verified local `.git` storage and working tree with byte-level `rg`; no user-home absolute-path hits found.
+- 2026-05-24T15:47:00+09:00: Ran `git fsck --no-reflogs --unreachable --no-progress`; no unreachable objects reported.
 
 ## Findings
 
-### Blocking / High-Confidence Risks
+### Remediated High-Confidence Risks
 
-1. **Reachable git history still contains personal absolute paths.**
-   - Affected paths in history:
+1. **Reachable git history contained personal absolute paths before rewrite.**
+   - Affected paths before remediation:
      - `aidlc-docs/aidlc-state.md`
      - `aidlc-docs/audit.md`
      - `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
    - Values observed were user-home absolute paths for the old and current workspace roots; the exact strings are intentionally redacted from this audit note.
-   - Current tree has been redacted, but publicizing the repository with full existing history would still expose these paths.
-   - Remediation before public release: either rewrite history to replace those strings, or publish a fresh/squashed repository that starts after redaction.
+   - Remediation completed: all local refs were history-rewritten to replace those paths with `<workspace-root>`.
+   - Verification after rewrite found no absolute-path hits in reachable history, local `.git` storage, or the working tree.
 
 ### Non-Blocking / Acceptable Public Metadata
 
@@ -60,4 +65,4 @@
 
 ### Public Release Judgment
 
-Not ready for public release with full history intact. The current tree is clean for the checked absolute-path concern after remediation, and no credential/obvious PII blockers were found, but the reachable git history still discloses local absolute paths. Publish only after history rewrite/squash/fresh-import, then rerun the same scans on the final public branch.
+Ready for public release from the rewritten local history with respect to the checked PII, secret, and absolute-path concerns. Because history was rewritten, any already-published remote branch must be updated by force-push or replaced by a fresh public repository, and the final remote state should be scanned once more after publication.
