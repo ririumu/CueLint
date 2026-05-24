@@ -85,6 +85,39 @@ JSON is the default output format. The top-level object contains:
 - `flags`: deterministic threshold flags with metric, value, threshold, and trigger state.
 - `metadata`: version, language scope, deterministic marker, and threshold configuration.
 
+Compact example:
+
+```json
+{
+  "evidence": [
+    {
+      "span_text": "I cannot",
+      "cue_family": "refusal",
+      "start": 0,
+      "end": 8,
+      "sentence_index": 0,
+      "paragraph_index": 0,
+      "pattern_id": "refusal_i_cannot"
+    }
+  ],
+  "summary": {
+    "cue_count": 1,
+    "cue_density": 0.25
+  },
+  "flags": [],
+  "metadata": {
+    "language_scope": "en",
+    "deterministic": true
+  }
+}
+```
+
+## First-Version Limitations
+
+CueLint is an audit instrument, not a semantic judge. It does not detect factuality, hallucination, legal correctness, medical safety, or whether an answer is globally good or bad.
+
+Sentence segmentation is deterministic and intentionally simple. Abbreviations, decimals, initials, and unusual punctuation can produce imperfect sentence indexes; those indexes are evidence metadata, not semantic claims.
+
 ## First Version Scope
 
 The approved first version is intentionally small:

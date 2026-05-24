@@ -5,15 +5,15 @@
 - **Project Type**: Greenfield
 - **Start Date**: 2026-05-08T07:43:50Z
 - **Current Phase**: CONSTRUCTION
-- **Current Stage**: Code Generation Planning - Awaiting Approval
-- **Last Completed Stage**: Inception Readiness Review
-- **Next Stage**: CONSTRUCTION - Code Generation Plan Approval
+- **Current Stage**: Build and Test - Verified
+- **Last Completed Stage**: Code Generation
+- **Next Stage**: Construction Closure / Operations Placeholder
 
 ## Workspace State
-- **Existing Code**: No
-- **Programming Languages**: Python planned, none implemented yet
-- **Build System**: Makefile planned for lint workflow; Python tooling to be selected during Code Generation planning
-- **Project Structure**: Documentation-only workspace, application code pending
+- **Existing Code**: Yes
+- **Programming Languages**: Python
+- **Build System**: Makefile with local `lint` and `test` targets
+- **Project Structure**: Python CLI under `src/cuelint/`, tests under `tests/`, sample input under `samples/`
 - **Workspace Root**: <workspace-root>
 - **Reverse Engineering Needed**: No
 - **Reverse Engineering Artifacts Found**: No
@@ -52,8 +52,8 @@
 - [x] NFR Requirements - SKIPPED
 - [x] NFR Design - SKIPPED
 - [x] Infrastructure Design - SKIPPED
-- [ ] Code Generation - PLANNING AWAITING APPROVAL
-- [ ] Build and Test - EXECUTE
+- [x] Code Generation - COMPLETED
+- [x] Build and Test - VERIFIED
 
 ### OPERATIONS PHASE
 - [ ] Operations - PLACEHOLDER
@@ -112,7 +112,16 @@
 ## Code Generation Planning Status
 - Unit name: `cuelint`
 - Plan file: `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
-- Status: Created; pre-generation gate accepted as sufficient; awaiting explicit Code Generation Plan approval before code generation.
+- Status: Completed through four block iterations.
 - Application code target: workspace root, using `src/`, `tests/`, and supporting root-level project files.
 - Planning risk items included: offset preservation, duplicate match policy, sentence segmentation limitations.
 - Gate note: User confirmed on 2026-05-08 that the current stop state is correct AI-DLC behavior and that no additional pre-Code-Generation corrections are required.
+
+## Code Generation Completion Status
+- Application package created under `src/cuelint/`.
+- CLI entry point supports stdin input, file input, JSON output, and Markdown output.
+- Deterministic cue families implemented for raw negation, contrastive reframing, refusal, disclaimer, and meta-negation.
+- Summary metrics and deterministic threshold flags implemented.
+- `make test` passed with 22 tests.
+- `make lint` produced JSON evidence from the local sample.
+- Construction code summary created at `aidlc-docs/construction/cuelint/code/code-generation-summary.md`.

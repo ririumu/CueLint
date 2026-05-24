@@ -2,7 +2,7 @@
 
 ## Status
 
-Code Generation Planning is complete and awaiting explicit user approval. Do not generate application code until this plan is approved.
+Code Generation is complete. Application code has been generated, tested, and documented for CueLint v1.
 
 ## Unit Context
 
@@ -103,97 +103,97 @@ Code Generation Planning is complete and awaiting explicit user approval. Do not
 
 ### Step 1: Project Structure Setup
 
-- [ ] Create `src/cuelint/` package structure.
-- [ ] Create `tests/` structure.
-- [ ] Create `samples/assistant-response.txt`.
-- [ ] Create or update `pyproject.toml` with package metadata and test configuration.
-- [ ] Create or update `Makefile` with `lint` and test-oriented targets.
+- [x] Create `src/cuelint/` package structure.
+- [x] Create `tests/` structure.
+- [x] Create `samples/assistant-response.txt`.
+- [x] Create or update `pyproject.toml` with package metadata and test configuration.
+- [x] Create or update `Makefile` with `lint` and test-oriented targets.
 
 ### Step 2: Shared Models and Errors
 
-- [ ] Create `src/cuelint/models.py` with data structures for normalized documents, cue patterns, evidence rows, summary metrics, flags, audit result, thresholds, and CLI options.
-- [ ] Create `src/cuelint/errors.py` for expected application errors.
-- [ ] Ensure models support JSON serialization without heavyweight dependencies.
+- [x] Create `src/cuelint/models.py` with data structures for normalized documents, cue patterns, evidence rows, summary metrics, flags, audit result, thresholds, and CLI options.
+- [x] Create `src/cuelint/errors.py` for expected application errors.
+- [x] Ensure models support JSON serialization without heavyweight dependencies.
 
 ### Step 3: Text Normalization and Segmentation
 
-- [ ] Create `src/cuelint/normalizer.py`.
-- [ ] Implement paragraph segmentation with original offsets.
-- [ ] Implement deterministic sentence segmentation with documented limitations.
-- [ ] Implement token counting.
-- [ ] Implement matching normalization with offset preservation strategy.
-- [ ] Add unit tests for offset preservation, contractions, paragraph indexes, sentence indexes, and empty input boundaries.
+- [x] Create `src/cuelint/normalizer.py`.
+- [x] Implement paragraph segmentation with original offsets.
+- [x] Implement deterministic sentence segmentation with documented limitations.
+- [x] Implement token counting.
+- [x] Implement matching normalization with offset preservation strategy.
+- [x] Add unit tests for offset preservation, contractions, paragraph indexes, sentence indexes, and empty input boundaries.
 
 ### Step 4: Cue Pattern Catalog
 
-- [ ] Create `src/cuelint/patterns.py`.
-- [ ] Define first-version English cue families and pattern identifiers.
-- [ ] Include raw negation, contrastive reframing, refusal, disclaimer, and meta-negation patterns.
-- [ ] Keep pattern definitions inspectable in code.
-- [ ] Add tests that verify required families and pattern identifiers are present.
+- [x] Create `src/cuelint/patterns.py`.
+- [x] Define first-version English cue families and pattern identifiers.
+- [x] Include raw negation, contrastive reframing, refusal, disclaimer, and meta-negation patterns.
+- [x] Keep pattern definitions inspectable in code.
+- [x] Add tests that verify required families and pattern identifiers are present.
 
 ### Step 5: Cue Detection
 
-- [ ] Create `src/cuelint/detector.py`.
-- [ ] Apply cue patterns against the normalized document.
-- [ ] Emit original span text, family, start/end offsets, sentence index, paragraph index, and pattern identifier.
-- [ ] Implement duplicate match policy.
-- [ ] Implement deterministic evidence ordering.
-- [ ] Add tests for basic matches, non-matches, overlapping matches, repeated cues, and original offsets.
+- [x] Create `src/cuelint/detector.py`.
+- [x] Apply cue patterns against the normalized document.
+- [x] Emit original span text, family, start/end offsets, sentence index, paragraph index, and pattern identifier.
+- [x] Implement duplicate match policy.
+- [x] Implement deterministic evidence ordering.
+- [x] Add tests for basic matches, non-matches, overlapping matches, repeated cues, and original offsets.
 
 ### Step 6: Metrics and Flags
 
-- [ ] Create `src/cuelint/metrics.py`.
-- [ ] Compute cue counts by family, response length, paragraph count, sentence count, token count, cue density, and first-paragraph cue count.
-- [ ] Create `src/cuelint/flags.py`.
-- [ ] Implement high cue-density and first-paragraph concentration threshold flags.
-- [ ] Add tests for zero-cue input, zero-token defensive behavior, threshold boundaries, and traceability metadata.
+- [x] Create `src/cuelint/metrics.py`.
+- [x] Compute cue counts by family, response length, paragraph count, sentence count, token count, cue density, and first-paragraph cue count.
+- [x] Create `src/cuelint/flags.py`.
+- [x] Implement high cue-density and first-paragraph concentration threshold flags.
+- [x] Add tests for zero-cue input, zero-token defensive behavior, threshold boundaries, and traceability metadata.
 
 ### Step 7: Audit Service
 
-- [ ] Create `src/cuelint/service.py`.
-- [ ] Implement `audit_text(text, config=None)` as the orchestration entry point.
-- [ ] Ensure service code has no process exits and no CLI-specific side effects.
-- [ ] Add integration-style unit tests for complete audit results.
+- [x] Create `src/cuelint/service.py`.
+- [x] Implement `audit_text(text, config=None)` as the orchestration entry point.
+- [x] Ensure service code has no process exits and no CLI-specific side effects.
+- [x] Add integration-style unit tests for complete audit results.
 
 ### Step 8: Output Formatting
 
-- [ ] Create `src/cuelint/formatter.py`.
-- [ ] Implement JSON output as the default format.
-- [ ] Implement optional Markdown output if it remains small and does not delay the core JSON path.
-- [ ] Add tests for valid JSON, empty evidence output, stable ordering, and Markdown table headers if Markdown is included.
+- [x] Create `src/cuelint/formatter.py`.
+- [x] Implement JSON output as the default format.
+- [x] Implement optional Markdown output if it remains small and does not delay the core JSON path.
+- [x] Add tests for valid JSON, empty evidence output, stable ordering, and Markdown table headers if Markdown is included.
 
 ### Step 9: CLI Adapter
 
-- [ ] Create `src/cuelint/cli.py`.
-- [ ] Create `src/cuelint/__main__.py`.
-- [ ] Support stdin input.
-- [ ] Support file input.
-- [ ] Support output format selection.
-- [ ] Return clear non-zero errors for empty input, missing files, unreadable files, and unsupported formats.
-- [ ] Add CLI tests for stdin, file input, JSON default, Markdown option if included, and error paths.
+- [x] Create `src/cuelint/cli.py`.
+- [x] Create `src/cuelint/__main__.py`.
+- [x] Support stdin input.
+- [x] Support file input.
+- [x] Support output format selection.
+- [x] Return clear non-zero errors for empty input, missing files, unreadable files, and unsupported formats.
+- [x] Add CLI tests for stdin, file input, JSON default, Markdown option if included, and error paths.
 
 ### Step 10: Lint Workflow
 
-- [ ] Create or update `Makefile` so `make lint` runs CueLint against `samples/assistant-response.txt`.
-- [ ] Ensure `make lint` requires no network access and no LLM judge.
-- [ ] Add a documented test command or make target for local verification.
+- [x] Create or update `Makefile` so `make lint` runs CueLint against `samples/assistant-response.txt`.
+- [x] Ensure `make lint` requires no network access and no LLM judge.
+- [x] Add a documented test command or make target for local verification.
 
 ### Step 11: Documentation Updates
 
-- [ ] Update `README.md` with installation or local execution instructions once exact commands exist.
-- [ ] Document first-version limitations, especially sentence segmentation and audit-not-judge scope.
-- [ ] Document JSON output shape with a compact example.
-- [ ] Create `aidlc-docs/construction/cuelint/code/code-generation-summary.md` summarizing generated files and story coverage.
+- [x] Update `README.md` with installation or local execution instructions once exact commands exist.
+- [x] Document first-version limitations, especially sentence segmentation and audit-not-judge scope.
+- [x] Document JSON output shape with a compact example.
+- [x] Create `aidlc-docs/construction/cuelint/code/code-generation-summary.md` summarizing generated files and story coverage.
 
 ### Step 12: Verification Before Completion
 
-- [ ] Run the selected test command.
-- [ ] Run `make lint`.
-- [ ] Verify generated code is outside `aidlc-docs/`.
-- [ ] Verify construction documentation remains under `aidlc-docs/construction/cuelint/code/`.
-- [ ] Verify all implemented stories are covered by code or tests.
-- [ ] Mark completed plan steps with `[x]` in this file as generation proceeds.
+- [x] Run the selected test command.
+- [x] Run `make lint`.
+- [x] Verify generated code is outside `aidlc-docs/`.
+- [x] Verify construction documentation remains under `aidlc-docs/construction/cuelint/code/`.
+- [x] Verify all implemented stories are covered by code or tests.
+- [x] Mark completed plan steps with `[x]` in this file as generation proceeds.
 
 ## Out of Scope for Code Generation
 
@@ -211,4 +211,4 @@ Code Generation Planning is complete and awaiting explicit user approval. Do not
 
 ## Approval Gate
 
-This plan is the single source of truth for Code Generation. Code generation must not begin until the user explicitly approves this plan.
+Code Generation proceeded under the approved four-block iteration plan and is now complete for CueLint v1.

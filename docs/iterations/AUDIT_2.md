@@ -15,3 +15,7 @@
 - 2026-05-24T06:45:00Z: Adopted local `Makefile` and sample input, verified CLI help, and updated README for generated CLI usage and output shape.
 - 2026-05-24T06:46:00Z: Ran `make test`: 22 tests passed.
 - 2026-05-24T06:46:00Z: Ran `make lint`: sample audit produced JSON evidence, summary, flags, and metadata.
+- 2026-05-24T06:47:00Z: Cut branch `codex/block-4-verification` from `main`.
+- 2026-05-24T06:50:00Z: Marked Code Generation Plan steps complete, updated AI-DLC state to Build and Test verified, and created construction code summary.
+- 2026-05-24T06:52:00Z: Re-ran `make test`: 22 tests passed.
+- 2026-05-24T06:52:00Z: Re-ran `make lint`: sample audit produced valid JSON evidence and deterministic flags.
