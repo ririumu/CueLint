@@ -11,9 +11,9 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] commit portfolio positioning changes
 - [x] self-merge `codex/portfolio-positioning` to `main`
 - [x] clear it `[x]`
-- [ ] cut branch `codex/cue-catalog-hardening`
-- [ ] broaden the deterministic cue catalog for refusal, disclaimers, meta-negation, contrastive reframing, and hedging
-- [ ] add tests for the broadened catalog and overlapping evidence preservation
+- [x] cut branch `codex/cue-catalog-hardening`
+- [x] broaden the deterministic cue catalog for refusal, disclaimers, meta-negation, contrastive reframing, and hedging
+- [x] add tests for the broadened catalog and overlapping evidence preservation
 - [ ] commit cue catalog hardening
 - [ ] self-merge `codex/cue-catalog-hardening` to `main`
 - [ ] clear it `[x]`

@@ -16,6 +16,7 @@ class DetectorTests(unittest.TestCase):
             [
                 "contrastive_reframing",
                 "disclaimer",
+                "hedging",
                 "meta_negation",
                 "raw_negation",
                 "refusal",
@@ -39,6 +40,30 @@ class DetectorTests(unittest.TestCase):
         self.assertIn("raw_not", ids)
         self.assertIn("raw_does_not", ids)
         self.assertIn("meta_not_mean", ids)
+
+    def test_detects_broader_refusal_and_reframing_cues(self):
+        rows = _detect("I won't provide that. Instead of X, the issue is not Y but Z.")
+        ids = {row.pattern_id for row in rows}
+
+        self.assertIn("raw_will_not", ids)
+        self.assertIn("refusal_i_will_not", ids)
+        self.assertIn("contrast_instead_of", ids)
+        self.assertIn("contrast_issue_is_not", ids)
+        self.assertIn("contrast_not_but", ids)
+
+    def test_detects_safety_script_and_hedging_cues(self):
+        rows = _detect(
+            "In general, it depends and may vary. "
+            "This is for informational purposes only, not legal advice; consult a professional."
+        )
+        ids = {row.pattern_id for row in rows}
+
+        self.assertIn("hedge_in_general", ids)
+        self.assertIn("hedge_it_depends", ids)
+        self.assertIn("hedge_may_vary", ids)
+        self.assertIn("disclaimer_informational_only", ids)
+        self.assertIn("disclaimer_not_advice", ids)
+        self.assertIn("disclaimer_consult_professional", ids)
 
     def test_repeated_cues_are_stable_and_sorted(self):
         rows = _detect("No. No. It is not X but Y.")

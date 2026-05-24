@@ -11,6 +11,7 @@ CueFamily = Literal[
     "refusal",
     "disclaimer",
     "meta_negation",
+    "hedging",
 ]
 
 
