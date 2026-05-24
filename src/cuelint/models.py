@@ -80,8 +80,10 @@ class SummaryMetrics:
     sentence_count: int
     token_count: int
     cue_count: int
+    cue_cluster_count: int
     cue_density: float
     first_paragraph_cue_count: int
+    first_paragraph_cue_cluster_count: int
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -103,7 +105,7 @@ class Flag:
 @dataclass(frozen=True)
 class ThresholdConfig:
     high_cue_density: float = 0.08
-    first_paragraph_cue_count: int = 3
+    first_paragraph_cue_cluster_count: int = 3
 
 
 @dataclass(frozen=True)

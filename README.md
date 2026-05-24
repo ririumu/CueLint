@@ -90,9 +90,9 @@ PYTHONPATH=src python -m cuelint --format markdown samples/assistant-response.tx
 JSON is the default output format. The top-level object contains:
 
 - `evidence`: matched cue spans with `span_text`, `cue_family`, `start`, `end`, `sentence_index`, `paragraph_index`, and `pattern_id`.
-- `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue cluster count, cue density, and first-paragraph cue count.
+- `summary`: counts by family, response length, paragraph count, sentence count, token count, cue count, cue cluster count, cue density, first-paragraph cue count, and first-paragraph cue cluster count.
 - `flags`: deterministic threshold flags with metric, value, threshold, and trigger state.
-- `metadata`: version, language scope, deterministic marker, and threshold configuration.
+- `metadata`: version, language scope, deterministic marker, density basis, and threshold configuration.
 
 Compact example:
 
@@ -111,11 +111,13 @@ Compact example:
   ],
   "summary": {
     "cue_count": 1,
+    "cue_cluster_count": 1,
     "cue_density": 0.25
   },
   "flags": [],
   "metadata": {
     "language_scope": "en",
+    "density_basis": "overlapping cue spans are collapsed into cue clusters",
     "deterministic": true
   }
 }
@@ -128,6 +130,8 @@ CueLint is an audit instrument, not a semantic judge. It does not detect factual
 Sentence segmentation is deterministic and intentionally simple. Abbreviations, decimals, initials, and unusual punctuation can produce imperfect sentence indexes; those indexes are evidence metadata, not semantic claims.
 
 Nested cue spans are preserved in evidence. For density, overlapping local cue rows are collapsed into cue clusters so a phrase like `does not mean` remains inspectable without inflating the density metric three times.
+
+Threshold flags are deterministic tripwires over transparent metrics. They are meant to sort evidence for review, not to masquerade as calibrated risk scores.
 
 ## Version 0.1 Scope
 
@@ -154,7 +158,7 @@ Version 0.1:
 - Segments paragraphs and sentences.
 - Detects cue families with explicit patterns.
 - Emits evidence rows with matched span, cue family, position, sentence index, paragraph index, and pattern identifier.
-- Emits summary metrics such as counts by family, response length, paragraph count, sentence count, cue cluster count, cue density, and first-paragraph cue count.
+- Emits summary metrics such as counts by family, response length, paragraph count, sentence count, cue cluster count, cue density, first-paragraph cue count, and first-paragraph cue cluster count.
 - Emits JSON by default.
 - Includes deterministic threshold flags for high cue density and first-paragraph cue concentration.
 - Includes a `Makefile` with a `lint` target.

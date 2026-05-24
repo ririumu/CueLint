@@ -17,10 +17,10 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] commit cue catalog hardening
 - [x] self-merge `codex/cue-catalog-hardening` to `main`
 - [x] clear it `[x]`
-- [ ] cut branch `codex/density-calibration`
-- [ ] make cue density resilient to nested overlapping evidence rows
-- [ ] expose the density basis in summary and metadata
-- [ ] update threshold descriptions and tests
+- [x] cut branch `codex/density-calibration`
+- [x] make cue density resilient to nested overlapping evidence rows
+- [x] expose the density basis in summary and metadata
+- [x] update threshold descriptions and tests
 - [ ] commit density calibration changes
 - [ ] self-merge `codex/density-calibration` to `main`
 - [ ] clear it `[x]`
