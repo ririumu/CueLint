@@ -27,14 +27,14 @@ CueLint is now public as `ririumu/cuelint`. This iteration responds to external 
 - [x] cut branch `codex/release-evidence`
 - [x] record public release readiness evidence and final verification
 - [x] run the full local verification suite
-- [ ] commit release evidence
-- [ ] self-merge `codex/release-evidence` to `main`
-- [ ] clear it `[x]`
+- [x] commit release evidence
+- [x] self-merge `codex/release-evidence` to `main`
+- [x] clear it `[x]`
 
 ## Completion Criteria
 
-- [ ] README no longer frames the repository as pre-publication, alpha-only, or unfinished.
-- [ ] The cue catalog is meaningfully broader while remaining deterministic and inspectable.
-- [ ] Nested evidence rows remain visible, but density no longer overcounts the same local cue cluster.
-- [ ] Tests and `make lint` pass.
-- [ ] Iteration audit records each branch, commit, merge, and verification step.
+- [x] README no longer frames the repository as pre-publication, alpha-only, or unfinished.
+- [x] The cue catalog is meaningfully broader while remaining deterministic and inspectable.
+- [x] Nested evidence rows remain visible, but density no longer overcounts the same local cue cluster.
+- [x] Tests and `make lint` pass.
+- [x] Iteration audit records each branch, commit, merge, and verification step.

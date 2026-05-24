@@ -38,6 +38,9 @@
 - 2026-05-24T15:57:00+09:00: Ran Markdown output smoke test successfully.
 - 2026-05-24T15:58:00+09:00: Counted cue patterns by family: 52 total patterns across 6 cue families.
 - 2026-05-24T15:58:00+09:00: Created `docs/release-readiness-v0.1.0.md` with critique response, pattern inventory, verification commands, and release judgment.
+- 2026-05-24T15:59:00+09:00: Committed release evidence as `03701b4`.
+- 2026-05-24T15:59:00+09:00: Self-merged `codex/release-evidence` into `main`.
+- 2026-05-24T15:59:00+09:00: Cleared the release evidence checklist item and completion criteria.
 
 ## Findings
 
