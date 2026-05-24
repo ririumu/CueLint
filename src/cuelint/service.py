@@ -29,7 +29,8 @@ def audit_text(text: str, config: AuditConfig | None = None) -> AuditResult:
             "deterministic": True,
             "thresholds": {
                 "high_cue_density": runtime_config.thresholds.high_cue_density,
-                "first_paragraph_cue_count": runtime_config.thresholds.first_paragraph_cue_count,
+                "first_paragraph_cue_cluster_count": runtime_config.thresholds.first_paragraph_cue_cluster_count,
             },
+            "density_basis": "overlapping cue spans are collapsed into cue clusters",
         },
     )

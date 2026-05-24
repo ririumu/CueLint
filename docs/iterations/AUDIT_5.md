@@ -21,6 +21,13 @@
 - 2026-05-24T15:49:00+09:00: Committed cue catalog hardening as `f0cb7ed`.
 - 2026-05-24T15:49:00+09:00: Self-merged `codex/cue-catalog-hardening` into `main`.
 - 2026-05-24T15:49:00+09:00: Cleared the cue catalog hardening checklist item.
+- 2026-05-24T15:50:00+09:00: Created branch `codex/density-calibration`.
+- 2026-05-24T15:53:00+09:00: Added cue cluster metrics so overlapping evidence rows remain visible while density counts each local cluster once.
+- 2026-05-24T15:53:00+09:00: Switched high-density and first-paragraph concentration flags to cue-cluster metrics.
+- 2026-05-24T15:54:00+09:00: Exposed `density_basis` metadata and updated Markdown/JSON summary expectations.
+- 2026-05-24T15:54:00+09:00: Added tests proving `does not mean` emits three evidence rows but one density cluster.
+- 2026-05-24T15:54:00+09:00: Ran the full unittest suite: 25 tests passed.
+- 2026-05-24T15:54:00+09:00: Ran sample CLI audit; density dropped from raw evidence overcounting to 2 clusters / 29 tokens.
 
 ## Findings
 
