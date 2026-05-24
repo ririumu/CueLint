@@ -21,6 +21,9 @@
 - 2026-05-24T16:22:00+09:00: Ran Markdown output smoke test successfully.
 - 2026-05-24T16:22:00+09:00: Re-ran README cleanup `rg` checks successfully.
 - 2026-05-24T16:22:00+09:00: Ran `git diff --check` successfully.
+- 2026-05-24T16:23:00+09:00: Committed v0.1.2 release changes as `96ed845`.
+- 2026-05-24T16:23:00+09:00: Self-merged `codex/v012-release` into `main`.
+- 2026-05-24T16:23:00+09:00: Cleared the v0.1.2 release checklist item and prepared final push/tag publication record.
 
 ## Findings
 

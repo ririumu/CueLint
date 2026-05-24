@@ -17,11 +17,11 @@ CueLint v0.1.2 should reduce README wording that suggests an actively managed pr
 - [x] add v0.1.2 release-readiness documentation
 - [x] run full verification
 - [x] commit v0.1.2 release changes
-- [ ] self-merge `codex/v012-release` to `main`
-- [ ] clear it `[x]`
-- [ ] push `main` to `origin2`
-- [ ] create annotated tag `v0.1.2`
-- [ ] push tag `v0.1.2` to `origin2`
+- [x] self-merge `codex/v012-release` to `main`
+- [x] clear it `[x]`
+- [x] push `main` to `origin2`
+- [x] create annotated tag `v0.1.2`
+- [x] push tag `v0.1.2` to `origin2`
 
 ## Completion Criteria
 
@@ -29,4 +29,4 @@ CueLint v0.1.2 should reduce README wording that suggests an actively managed pr
 - [ ] README no longer contains the long `Version 0.1.x Scope`, `Implemented Requirements`, or `Out of Scope for Version` sections.
 - [x] Runtime and package metadata report `0.1.2`.
 - [x] `make test`, `make lint`, and Markdown output smoke test pass.
-- [ ] `main` and tag `v0.1.2` are pushed to `origin2`.
+- [x] `main` and tag `v0.1.2` are pushed to `origin2`.
