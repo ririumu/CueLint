@@ -11,3 +11,7 @@
 - 2026-05-24T16:23:37+09:00: Created GitHub release `v0.1.2` on `ririumu/CueLint` using `gh release create`.
 - 2026-05-24T16:23:40+09:00: Verified the release publication successfully using `gh release view`.
 - 2026-05-24T16:23:44+09:00: Removed temporary release notes file.
+- 2026-05-24T16:23:54+09:00: Committed `PLAN_8.md` and `AUDIT_8.md` updates on branch `codex/publish-v012-release`.
+- 2026-05-24T16:24:00+09:00: Switched to `main` and self-merged branch `codex/publish-v012-release`.
+- 2026-05-24T16:24:00+09:00: Pushed the updated `main` branch with iteration records to `origin2`.
+- 2026-05-24T16:24:00+09:00: Cleared the iteration 8 block.

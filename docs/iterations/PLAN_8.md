@@ -10,9 +10,9 @@ The CueLint v0.1.2 release changes have already been merged into `main` and a lo
 - [x] push tag `v0.1.2` to `origin2`
 - [x] create GitHub release `v0.1.2` on `ririumu/CueLint` using `gh release create`
 - [x] verify release publication on GitHub
-- [ ] update PLAN and AUDIT documents with results
-- [ ] self-merge `codex/publish-v012-release` to `main`
-- [ ] clear it `[x]`
+- [x] update PLAN and AUDIT documents with results
+- [x] self-merge `codex/publish-v012-release` to `main`
+- [x] clear it `[x]`
 
 ## Completion Criteria
 
