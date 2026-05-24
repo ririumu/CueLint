@@ -2,9 +2,7 @@
 
 A deterministic CLI linter for researchers who use AI and want inspectable evidence of recurring surface discourse cue patterns.
 
-CueLint audits saved or piped assistant responses with deterministic cue detection. Version 0.1.x is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
-
-> Current status: CueLint v0.1.1 is a public, verified local Python CLI and portfolio release.
+CueLint audits saved or piped assistant responses with deterministic cue detection. The current implementation is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
 ## Purpose
 
@@ -18,7 +16,7 @@ The primary persona is a researcher using AI: someone who relies on LLMs during 
 
 This user needs a tool that can run locally, explain its findings, and fit into ordinary research workflows without requiring an LLM judge or heavyweight evaluation stack.
 
-## Product Thesis
+## Why cues?
 
 Assistant responses can contain recurring surface cue patterns that are worth reviewing without asking a model to judge them. A response may include refusal-like, reframing-like, over-qualification-like, or disclaimer-like wording through stable cue patterns such as:
 
@@ -37,13 +35,15 @@ Assistant responses can contain recurring surface cue patterns that are worth re
 
 CueLint captures those signals with deterministic text processing and presents them as evidence for human review.
 
-## Interpretation Contract
+## Limits
 
-CueLint detects surface cue evidence. It does not infer response quality, over-refusal, safety correctness, factual correctness, semantic adequacy, or user intent.
+CueLint detects surface cue evidence in one English assistant response per invocation.
+
+It does not infer response quality, over-refusal, safety correctness, factual correctness, semantic adequacy, or user intent.
 
 Threshold flags are deterministic review tripwires over transparent counts and densities. They are not calibrated labels, risk scores, benchmark results, or judgments that an answer is bad.
 
-Prompt-response pairing, dataset evaluation, ML calibration, multilingual cue families, and LLM-as-judge evaluation remain out of scope for version 0.1.x.
+There is no prompt-response pairing, dataset evaluation, ML calibration, multilingual cue catalog, or LLM-as-judge evaluation.
 
 ## Intended Workflow
 
@@ -53,7 +53,7 @@ CueLint fits naturally into lint-style workflows. A representative workflow is:
 make lint
 ```
 
-Version 0.1.x runs deterministic checks against one saved or piped assistant response per invocation and returns evidence that a researcher can inspect. The scope is intentionally tight so the output remains transparent, fast, and reproducible.
+The current implementation runs deterministic checks against one saved or piped assistant response per invocation and returns evidence that a researcher can inspect. The scope is tight so the output remains transparent, fast, and reproducible.
 
 ## Local Usage
 
@@ -149,52 +149,3 @@ Sentence segmentation is deterministic and intentionally simple. Abbreviations, 
 Nested cue spans are preserved in evidence. For density, overlapping local cue rows are collapsed into cue clusters so a phrase like `does not mean` remains inspectable without inflating the density metric three times.
 
 Threshold flags are deterministic tripwires over transparent metrics. They are meant to sort evidence for review, not to masquerade as calibrated risk scores.
-
-## Version 0.1.x Scope
-
-Version 0.1.x is deliberately focused:
-
-| Area | Decision |
-|---|---|
-| Interface | Local CLI |
-| Primary persona | Researcher using AI |
-| Language scope | English only |
-| Implementation | Python |
-| Analysis style | Deterministic cue extraction and thresholding |
-| Primary output | JSON evidence table plus summary metrics |
-| Lint workflow | Required `make lint` target |
-| ML dependency | None |
-| Deployment | None |
-
-## Implemented Requirements
-
-Version 0.1.x:
-
-- Accepts one assistant response per invocation from a file or standard input.
-- Normalizes text deterministically.
-- Segments paragraphs and sentences.
-- Detects cue families with explicit patterns.
-- Emits evidence rows with matched span, cue family, position, sentence index, paragraph index, and pattern identifier.
-- Emits summary metrics such as counts by family, response length, paragraph count, sentence count, cue cluster count, cue density, first-paragraph cue count, and first-paragraph cue cluster count.
-- Emits JSON by default.
-- Includes deterministic threshold flags for high cue density and first-paragraph cue concentration.
-- Includes a `Makefile` with a `lint` target.
-- Includes focused tests for cue detection, metrics, flags, formatting, normalization, and CLI behavior.
-
-## Out of Scope for Version 0.1.x
-
-- SDK packaging.
-- API service.
-- Web dashboard.
-- Japanese or multilingual cue families.
-- Classical ML training or calibration.
-- LLM-as-judge evaluation.
-- Hallucination or factuality detection.
-- Legal, medical, or safety correctness verification.
-- Response-quality evaluation.
-- Over-refusal classification.
-- User-intent inference.
-- Deployment or infrastructure work.
-- Multi-file project scans.
-- Prompt-response pairing or conversation-history parsing.
-- CSV or JSONL output.
