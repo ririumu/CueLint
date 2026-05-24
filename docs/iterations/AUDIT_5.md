@@ -9,6 +9,10 @@
 - 2026-05-24T15:41:00+09:00: Created branch `codex/portfolio-positioning`.
 - 2026-05-24T15:42:00+09:00: Rewrote README language from pre-publication/prototype framing to public v0.1 portfolio positioning.
 - 2026-05-24T15:42:00+09:00: Changed package development classifier from Alpha to Beta to match a verified public v0.1 CLI.
+- 2026-05-24T15:43:00+09:00: Ran focused formatter and CLI tests: 10 tests passed.
+- 2026-05-24T15:43:00+09:00: Committed portfolio positioning changes as `cf1a56c`.
+- 2026-05-24T15:44:00+09:00: Self-merged `codex/portfolio-positioning` into `main`.
+- 2026-05-24T15:44:00+09:00: Cleared the portfolio positioning checklist item.
 
 ## Findings
 
