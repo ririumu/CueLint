@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuelint"
+version = "0.1.0"
+description = "Deterministic cue-based audit CLI for assistant responses"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "CueLint contributors" }]
+dependencies = []
+
+[project.scripts]
+cuelint = "cuelint.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
