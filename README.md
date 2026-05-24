@@ -126,7 +126,7 @@ Sentence segmentation is deterministic and intentionally simple. Abbreviations, 
 
 ## First Version Scope
 
-The approved first version is intentionally small:
+The first version is intentionally small:
 
 | Area | Decision |
 |---|---|
@@ -170,33 +170,6 @@ The first implementation should:
 - Prompt-response pairing or conversation-history parsing.
 - CSV or JSONL output.
 
-## Current Status
-
-The repository is currently in AI-DLC Construction after Code Generation and Build/Test verification. The generated application code lives under `src/cuelint/`, tests live under `tests/`, and local workflow targets are provided by `Makefile`.
-
-## AI-DLC Artifacts
-
-The planning artifacts live under `aidlc-docs/`:
-
-- `aidlc-docs/inception/inception-summary.md`
-- `aidlc-docs/inception/requirements/requirements.md`
-- `aidlc-docs/inception/requirements/requirement-verification-questions.md`
-- `aidlc-docs/inception/user-stories/personas.md`
-- `aidlc-docs/inception/user-stories/stories.md`
-- `aidlc-docs/inception/application-design/application-design.md`
-- `aidlc-docs/inception/application-design/components.md`
-- `aidlc-docs/inception/application-design/component-methods.md`
-- `aidlc-docs/inception/application-design/services.md`
-- `aidlc-docs/inception/application-design/component-dependency.md`
-- `aidlc-docs/inception/plans/user-stories-assessment.md`
-- `aidlc-docs/inception/plans/story-generation-plan.md`
-- `aidlc-docs/inception/plans/application-design-plan.md`
-- `aidlc-docs/inception/plans/execution-plan.md`
-- `aidlc-docs/construction-readiness.md`
-- `aidlc-docs/construction/plans/cuelint-code-generation-plan.md`
-- `aidlc-docs/aidlc-state.md`
-- `aidlc-docs/audit.md`
-
 ## Next Step
 
-Before publishing, confirm repository visibility, remote ownership, release tag strategy, and whether the local commits should be pushed as-is or squashed outside this repository's iteration history.
+Before publishing, confirm repository visibility, remote ownership, release tag strategy, and whether the local commits should be pushed as-is or squashed for a cleaner public history.
