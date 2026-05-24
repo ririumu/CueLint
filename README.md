@@ -1,26 +1,26 @@
 # CueLint
 
-A deterministic CLI linter for researchers who use AI and want inspectable evidence of recurring LLM response failure patterns.
+A deterministic CLI linter for researchers who use AI and want inspectable evidence of recurring surface discourse cue patterns.
 
-CueLint audits saved or piped assistant responses with deterministic cue detection. Version 0.1 is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
+CueLint audits saved or piped assistant responses with deterministic cue detection. Version 0.1.x is English-only, local-first, Python-based, JSON-first, and designed to fit workflows like `make lint`.
 
 > Current status: CueLint v0.1.0 is a public, verified local Python CLI and portfolio release.
 
 ## Purpose
 
-CueLint is a lightweight Python command-line tool for post-hoc auditing of English assistant responses. It focuses on stable textual operators that often appear in disliked LLM behaviors, such as negation, refusal, disclaimers, meta-negation, contrastive reframing, and hedging.
+CueLint is a lightweight Python command-line tool for post-hoc auditing of English assistant responses. It focuses on stable textual operators that may be useful review cues, such as negation, refusal, disclaimers, meta-negation, contrastive reframing, and hedging.
 
 CueLint is deliberately non-semantic: it does not decide whether an answer is factually correct, legally safe, medically sound, or globally "bad." Its job is evidence extraction: matched cue spans, cue families, positions, counts, density signals, and deterministic threshold flags that a human can inspect.
 
 ## Target User
 
-The primary persona is a researcher using AI: someone who relies on LLMs during research, writing, analysis, or synthesis and wants a lightweight way to inspect whether an assistant response contains recurring discourse patterns that may indicate unwanted refusal, reframing, disclaiming, or over-qualification.
+The primary persona is a researcher using AI: someone who relies on LLMs during research, writing, analysis, or synthesis and wants a lightweight way to inspect whether an assistant response contains recurring discourse cue patterns such as refusal-like, disclaimer-like, reframing-like, or over-qualification-like wording.
 
 This user needs a tool that can run locally, explain its findings, and fit into ordinary research workflows without requiring an LLM judge or heavyweight evaluation stack.
 
 ## Product Thesis
 
-Many disliked assistant behaviors are heterogeneous at the user-experience level but share recurring textual operators. A response that over-refuses, reframes the user's intent, over-qualifies an answer, or adds unwanted disclaimers may contain stable cue patterns such as:
+Assistant responses can contain recurring surface cue patterns that are worth reviewing without asking a model to judge them. A response may include refusal-like, reframing-like, over-qualification-like, or disclaimer-like wording through stable cue patterns such as:
 
 - `not ... but`
 - `not ... rather`
@@ -37,6 +37,14 @@ Many disliked assistant behaviors are heterogeneous at the user-experience level
 
 CueLint captures those signals with deterministic text processing and presents them as evidence for human review.
 
+## Interpretation Contract
+
+CueLint detects surface cue evidence. It does not infer response quality, over-refusal, safety correctness, factual correctness, semantic adequacy, or user intent.
+
+Threshold flags are deterministic review tripwires over transparent counts and densities. They are not calibrated labels, risk scores, benchmark results, or judgments that an answer is bad.
+
+Prompt-response pairing, dataset evaluation, ML calibration, multilingual cue families, and LLM-as-judge evaluation remain out of scope for version 0.1.x.
+
 ## Intended Workflow
 
 CueLint fits naturally into lint-style workflows. A representative workflow is:
@@ -45,7 +53,7 @@ CueLint fits naturally into lint-style workflows. A representative workflow is:
 make lint
 ```
 
-Version 0.1 runs deterministic checks against one saved or piped assistant response per invocation and returns evidence that a researcher can inspect. The scope is intentionally tight so the output remains transparent, fast, and reproducible.
+Version 0.1.x runs deterministic checks against one saved or piped assistant response per invocation and returns evidence that a researcher can inspect. The scope is intentionally tight so the output remains transparent, fast, and reproducible.
 
 ## Local Usage
 
@@ -125,7 +133,7 @@ Compact example:
 
 ## Design Boundaries
 
-CueLint is an audit instrument, not a semantic judge. It does not detect factuality, hallucination, legal correctness, medical safety, or whether an answer is globally good or bad.
+CueLint is an audit instrument, not a semantic judge, quality evaluator, over-refusal classifier, or safety evaluator. It does not detect factuality, hallucination, legal correctness, medical safety, user intent, or whether an answer is globally good or bad.
 
 Sentence segmentation is deterministic and intentionally simple. Abbreviations, decimals, initials, and unusual punctuation can produce imperfect sentence indexes; those indexes are evidence metadata, not semantic claims.
 
@@ -133,9 +141,9 @@ Nested cue spans are preserved in evidence. For density, overlapping local cue r
 
 Threshold flags are deterministic tripwires over transparent metrics. They are meant to sort evidence for review, not to masquerade as calibrated risk scores.
 
-## Version 0.1 Scope
+## Version 0.1.x Scope
 
-Version 0.1 is deliberately focused:
+Version 0.1.x is deliberately focused:
 
 | Area | Decision |
 |---|---|
@@ -143,7 +151,7 @@ Version 0.1 is deliberately focused:
 | Primary persona | Researcher using AI |
 | Language scope | English only |
 | Implementation | Python |
-| Evaluation style | Deterministic cue extraction and thresholding |
+| Analysis style | Deterministic cue extraction and thresholding |
 | Primary output | JSON evidence table plus summary metrics |
 | Lint workflow | Required `make lint` target |
 | ML dependency | None |
@@ -151,7 +159,7 @@ Version 0.1 is deliberately focused:
 
 ## Implemented Requirements
 
-Version 0.1:
+Version 0.1.x:
 
 - Accepts one assistant response per invocation from a file or standard input.
 - Normalizes text deterministically.
@@ -164,7 +172,7 @@ Version 0.1:
 - Includes a `Makefile` with a `lint` target.
 - Includes focused tests for cue detection, metrics, flags, formatting, normalization, and CLI behavior.
 
-## Out of Scope for Version 0.1
+## Out of Scope for Version 0.1.x
 
 - SDK packaging.
 - API service.
@@ -174,6 +182,9 @@ Version 0.1:
 - LLM-as-judge evaluation.
 - Hallucination or factuality detection.
 - Legal, medical, or safety correctness verification.
+- Response-quality evaluation.
+- Over-refusal classification.
+- User-intent inference.
 - Deployment or infrastructure work.
 - Multi-file project scans.
 - Prompt-response pairing or conversation-history parsing.
